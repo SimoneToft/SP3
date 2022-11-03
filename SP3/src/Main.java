@@ -8,7 +8,6 @@ public class Main {
         Scanner keyboardsignup = new Scanner(System.in);
 
         boolean loggedIn = false;
-        boolean loggingIn = false;
 
 
         while(!loggedIn){
