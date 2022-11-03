@@ -1,41 +1,45 @@
-import java.io.File;
 import java.util.Scanner;
 
 public class Main {
+    private static startMenu startmenu = new startMenu();
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
-        File userdata = new File("Data/user.csv");
-        Scanner scan = new Scanner(userdata);
-        String username = scan.nextLine();
-        String password = scan.nextLine();
-        int intInputMain;
+        Scanner keyboardlogin = new Scanner(System.in);
+        Scanner keyboardsignup = new Scanner(System.in);
+
         boolean loggedIn = false;
         boolean loggingIn = false;
 
+
         while(!loggedIn){
             System.out.println("Welcome to our streaming service! \n 1. Log in \n 2. Sign up");
+            int intInputMain;
             intInputMain = keyboard.nextInt();
-            switch (intInputMain){
-                case 1:
-                    System.out.println("Type your username:");
-                    String inputusername=keyboard.nextLine();
-                    System.out.println("Type your password:");
-                    String inputpassword=keyboard.nextLine();
-                        if(inputusername.equals(username)&&inputpassword.equals(password)){
-                            System.out.println("You are now logged in!");
-                        }
-                        else{
-                            System.out.println("Login is incorrect");
-                        }
-                    loggingIn=true;
-                case 2:
-                    System.out.println("Select a username:");
-                    System.out.println("Select a password:");
-
+            if (intInputMain == 1){
+                System.out.println("Type your username:");
+                String inputusername = keyboardlogin.nextLine();
+                System.out.println("Type your password:");
+                String inputpassword = keyboardlogin.nextLine();
+                if (startmenu.runLogin(inputusername, inputpassword)) {
+                    System.out.println("You are logged in");
+                    loggedIn = true;
+                } else {
+                    System.out.println("Incorrect log-in");
+                }
+            }
+                else if(intInputMain == 2) {
+                System.out.println("Select a username:");
+                String signupusername = keyboardsignup.nextLine();
+                System.out.println("Select a password:");
+                String signuppassword = keyboardsignup.nextLine();
+                startmenu.addUser(signupusername,signuppassword);
+                System.out.println("New user created!");
+            }
             }
 
 
         }
 
-    }
 }
+
+
