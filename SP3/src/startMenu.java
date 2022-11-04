@@ -7,8 +7,8 @@ public class startMenu {
     public FileIO fileIO = new FileIO();
     ArrayList<String> userdata = fileIO.readUserData();
     public boolean runLogin(String username, String password){
-        this.createUsers(userdata);
-        return this.loginCheck(userdata,username,password);
+        this.createUsers(fileIO.readUserData());
+        return this.loginCheck(fileIO.readUserData(),username,password);
     }
     public void addUser(String username, String password){
         if(this.usernameCheck(userdata, username)){
@@ -46,4 +46,3 @@ public class startMenu {
          return false;
      }
 }
-
