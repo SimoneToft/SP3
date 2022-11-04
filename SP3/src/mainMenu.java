@@ -49,7 +49,10 @@ public class mainMenu {
                     "22. Western");
         }
         else if(intInputMain == 5){
-            System.out.println("5");
+            System.out.println(startMenu.getCurrentUser().getWatched());
+        }
+        else if(intInputMain == 6){
+            System.out.println(startMenu.getCurrentUser().getSaved());
         }
     }
     public static void mediaSelector(){
@@ -57,9 +60,24 @@ public class mainMenu {
         int input= keyboard.nextInt();
         int choice=-1+input;
         if(choice>=0&&choice<=mediaAmount){
-            System.out.println(createMedia.getTitle(moviesDisplayed,seriesDisplayed,choice)+" is now playing...");
-            System.out.println("Press '0' to return to main menu");
-            if(keyboard.nextInt()==0){
+            String mediaTitle=createMedia.getTitle(moviesDisplayed,seriesDisplayed,choice);
+            System.out.println("You have selected '"+mediaTitle+"'");
+            System.out.println("Press '0' to return to main menu | Press '1' to play | Press '2' to save");
+            int mediaChoice= keyboard.nextInt();
+            if(mediaChoice==0){
+                runMainMenu();
+            }
+            else if(mediaChoice==1){
+                System.out.println(mediaTitle+" is now playing...");
+                System.out.println("Press '0' to return to main menu");
+                startMenu.getCurrentUser().watchedMedia(moviesDisplayed,seriesDisplayed,mediaTitle);
+                if(keyboard.nextInt()==0){
+                    runMainMenu();
+                }
+            }
+            else if(mediaChoice==2){
+                startMenu.getCurrentUser().saveMedia(moviesDisplayed,seriesDisplayed,mediaTitle);
+                System.out.println(mediaTitle+" is now saved.");
                 runMainMenu();
             }
         }
