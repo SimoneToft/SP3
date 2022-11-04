@@ -9,7 +9,6 @@ public class Main {
 
         boolean loggedIn = false;
 
-
         while(!loggedIn){
             System.out.println("Welcome to our streaming service! \n 1. Log in \n 2. Sign up");
             int intInputMain;
@@ -32,13 +31,11 @@ public class Main {
                 System.out.println("Select a password:");
                 String signuppassword = keyboardsignup.nextLine();
                 startmenu.addUser(signupusername,signuppassword);
-                System.out.println("New user created!");
             }
             }
-
-
+        if(loggedIn=true){
+            mainMenu.runMainMenu();
+        }
         }
 
 }
-
-
