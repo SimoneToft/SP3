@@ -1,14 +1,19 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class startMenu {
-    public User currentUser;
-    private ArrayList<User> users = new ArrayList<>();
+    private static ArrayList<User> users = new ArrayList<>();
     public FileIO fileIO = new FileIO();
+    public static User currentUser;
     ArrayList<String> userdata = fileIO.readUserData();
     public boolean runLogin(String username, String password){
         this.createUsers(fileIO.readUserData());
-        return this.loginCheck(fileIO.readUserData(),username,password);
+        return this.loginCheck(users,username,password);
+    }
+    public static void saveUsers(){
+        FileIO.writeUserData(users);
+    }
+    public static User getCurrentUser(){
+        return currentUser;
     }
     public void addUser(String username, String password){
         if(this.usernameCheck(userdata, username)){
@@ -21,7 +26,7 @@ public class startMenu {
     }
     private boolean usernameCheck(ArrayList<String> data, String username){
         for (String s : data) {
-            String[] values = s.replaceAll(" ","").split(",");
+            String[] values = s.replaceAll(" ","").split(";");
             if(username.equals(values[0])){
                 return true;
             }
@@ -30,19 +35,23 @@ public class startMenu {
     }
     private void createUsers(ArrayList<String> data){
         for (String s : data) {
-            String[] values = s.replaceAll(" ","").split(",");
-            User p = new User(values[0], values[1]);
+            String[] values = s.replaceAll(" ","").split(";");
+            String [] savedMovies = values[2].split(",");
+            String [] savedSeries = values[3].split(",");
+            String [] watchedMovies = values[4].split(",");
+            String [] watchedSeries = values[5].split(",");
+            User p = new User(values[0], values[1], savedMovies,savedSeries,watchedMovies,watchedSeries);
             users.add(p);
         }
     }
-     private boolean loginCheck(ArrayList<String> data, String username, String password){
-         for (String s : data) {
-             String[] values = s.replaceAll(" ","").split(",");
-             if(username.equals(values[0])&&password.equals(values[1])){
-                 currentUser = users.get(Arrays.asList(values).indexOf(username));
+     private boolean loginCheck(ArrayList<User> users, String username, String password){
+         for (User p:users) {
+             if(username.equals(p.getUsername())&&password.equals(p.getPassword())){
+                 currentUser = p;
                  return true;
              }
          }
          return false;
      }
 }
+
