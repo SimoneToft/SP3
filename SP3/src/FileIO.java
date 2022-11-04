@@ -30,5 +30,27 @@ public class FileIO {
         }
 
     }
+    public ArrayList<String> readMovieData(){
+        File userfile = new File("Data/movies.csv");
+        return getStrings(userfile);
+    }
+
+    private ArrayList<String> getStrings(File userfile) {
+        ArrayList<String> moviedata = new ArrayList<>();
+        try{
+            Scanner input = new Scanner(userfile);
+            while (input.hasNextLine()){
+                moviedata.add(input.nextLine());
+            }
+        } catch (FileNotFoundException e){
+            moviedata=null;
+        }
+        return moviedata;
+    }
+
+    public ArrayList<String> readSeriesData(){
+        File userfile = new File("Data/series.csv");
+        return getStrings(userfile);
+    }
 }
 
