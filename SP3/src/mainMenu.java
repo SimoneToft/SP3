@@ -1,3 +1,4 @@
+import java.util.Scanner;
 public class mainMenu {
     public static int mediaAmount;
     public static boolean seriesDisplayed=false;
