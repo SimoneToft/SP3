@@ -23,7 +23,7 @@ public class createMedia {
     }
     private static void movieList(ArrayList<String> data) {
         for (String s : data) {
-            String[] values = s.replaceAll(" ", " ").split(";");
+            String[] values = s.split(";");
             String [] categories = values[2].replaceAll(" ", "").split(",");
             Movie p = new Movie(values[0], values[1].replace(" ",""), categories, values[3].replace(" ",""));
             movies.add(p);
@@ -54,5 +54,4 @@ public class createMedia {
         }
         return i-1;
     }
-
 }
