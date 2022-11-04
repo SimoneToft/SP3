@@ -33,7 +33,7 @@ public class Main {
                 startmenu.addUser(signupusername,signuppassword);
             }
             }
-        if(loggedIn=true){
+        if(loggedIn){
             mainMenu.runMainMenu();
         }
         }
