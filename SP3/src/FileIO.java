@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 import java.io.FileWriter;
 
@@ -21,8 +22,9 @@ public class FileIO {
     }
     public static void newUser(String username, String password){
         try {
+            String[] str = {""};
             FileWriter writer = new FileWriter("Data/user.csv", true);
-            writer.write("\n"+username+","+password);
+            writer.write("\n"+username+";"+password+";"+ Arrays.toString(str).replace("[","").replace("]","") +";"+ Arrays.toString(str).replace("[","").replace("]","") +";"+ Arrays.toString(str).replace("[","").replace("]","") +";"+ Arrays.toString(str).replace("[","").replace("]","") +";");
             writer.close();
         }
         catch (IOException e){
@@ -52,5 +54,17 @@ public class FileIO {
         File userfile = new File("Data/series.csv");
         return getStrings(userfile);
     }
+    public static void writeUserData(ArrayList<User> users){
+        try{
+            FileWriter writer = new FileWriter("Data/user.csv");
+            writer.write("userName, userPassword, savedMovies, savedSeries, watchedMovies, watchedSeries\n");
+            for (User p : users){
+                writer.write(p.getUsername()+";"+p.getPassword()+";"+ Arrays.toString(p.getSavedMovies()).replace("[","").replace("]","") +";"+ Arrays.toString(p.getSavedSeries()).replace("[","").replace("]","") +";"+ Arrays.toString(p.getWatchedMovies()).replace("[","").replace("]","") +";"+ Arrays.toString(p.getWatchedSeries()).replace("[","").replace("]","") +"\n");
+            }
+            writer.close();
+        }
+        catch (IOException e){
+            System.out.println(e);
+        }
+    }
 }
-
