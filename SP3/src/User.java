@@ -1,9 +1,137 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
+
 public class User {
     private String username;
     private String password;
-    public User(String username, String password){
+    private String[] savedMovies;
+    private String[] savedSeries;
+    private String[] watchedMovies;
+    private String[] watchedSeries;
+
+    public User(String username, String password, String[] savedMovies, String[] savedSeries, String[] watchedMovies, String[] watchedSeries){
         this.username=username;
         this.password=password;
+        this.savedMovies=savedMovies;
+        this.savedSeries=savedSeries;
+        this.watchedMovies=watchedMovies;
+        this.watchedSeries=watchedSeries;
+    }
+    public void saveMedia(boolean a, boolean b, String str){
+        if(a){
+            List<String> mediaList;
+            if(!Objects.equals(savedMovies[0], "")){
+                mediaList = new ArrayList<String>(Arrays.asList(savedMovies));
+            }
+            else{
+                mediaList = new ArrayList<String>();
+            }
+            mediaList.add(str);
+            savedMovies=mediaList.toArray(savedMovies);
+            startMenu.saveUsers();
+        }
+        if (b){
+            List<String> mediaList;
+            if(!Objects.equals(savedSeries[0], "")){
+                mediaList = new ArrayList<String>(Arrays.asList(savedSeries));
+            }
+            else{
+                mediaList = new ArrayList<String>();
+            }
+            mediaList.add(str);
+            savedSeries=mediaList.toArray(savedSeries);
+            startMenu.saveUsers();
+        }
+    }
+    public void watchedMedia(boolean a, boolean b, String str){
+        if(a){
+            List<String> mediaList;
+            if(!Objects.equals(watchedMovies[0], "")){
+                mediaList = new ArrayList<String>(Arrays.asList(watchedMovies));
+            }
+            else{
+                mediaList = new ArrayList<String>();
+            }
+            mediaList.add(str);
+            watchedMovies=mediaList.toArray(watchedMovies);
+            startMenu.saveUsers();
+        }
+        if (b){
+            List<String> mediaList;
+            if(!Objects.equals(watchedSeries[0], "")){
+                mediaList = new ArrayList<String>(Arrays.asList(watchedSeries));
+            }
+            else{
+                mediaList = new ArrayList<String>();
+            }
+            mediaList.add(str);
+            watchedSeries=mediaList.toArray(watchedSeries);
+            startMenu.saveUsers();
+        }
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String[] getSavedMovies() {
+        return savedMovies;
+    }
+
+    public String[] getSavedSeries() {
+        return savedSeries;
+    }
+
+    public String[] getWatchedMovies() {
+        return watchedMovies;
+    }
+
+    public String[] getWatchedSeries() {
+        return watchedSeries;
+    }
+
+    public String getSaved() {
+        String savedMovieList= "|SAVED MOVIES|\n";
+        String savedSeriesList= "|SAVED SERIES|\n";
+        String noSavedMovies="You have no saved movies\n";
+        String noSavedSeries="You have no saved series\n";
+        return getString(savedMovieList, savedSeriesList, savedMovies, savedSeries, noSavedMovies,noSavedSeries);
+    }
+    public String getWatched() {
+        String watchedMovieList= "|WATCHED MOVIES|\n";
+        String watchedSeriesList= "|WATCHED SERIES|\n";
+        String noWatchedMovies="You have no watched movies\n";
+        String noWatchedSeries="You have no watched series\n";
+        return getString(watchedMovieList, watchedSeriesList, watchedMovies, watchedSeries, noWatchedMovies,noWatchedSeries);
+    }
+
+    private String getString(String watchedMovieList, String watchedSeriesList, String[] watchedMovies, String[] watchedSeries,String noMovies, String noSeries) {
+        int number=1;
+        if(Objects.equals(watchedMovies[0], "")){
+            watchedMovieList+=noMovies;
+        }
+        else {
+            for(String p : watchedMovies){
+                watchedMovieList+=number+". "+p+"\n";
+                number++;
+            }
+        }
+        if (Objects.equals(watchedSeries[0],"")){
+            watchedSeriesList+=noSeries;
+        }
+        else {
+            for (String p : watchedSeries){
+                watchedSeriesList+=number+". "+p+"\n";
+                number++;
+            }
+        }
+
+        return watchedMovieList+watchedSeriesList;
     }
 }
-
