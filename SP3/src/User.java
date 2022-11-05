@@ -22,7 +22,7 @@ public class User {
     public void saveMedia(boolean a, boolean b, String str){
         if(a){
             List<String> mediaList;
-            if(!Objects.equals(savedMovies[0], "")){
+            if(!Objects.equals(savedMovies[0], "null")){
                 mediaList = new ArrayList<String>(Arrays.asList(savedMovies));
             }
             else{
@@ -34,7 +34,7 @@ public class User {
         }
         if (b){
             List<String> mediaList;
-            if(!Objects.equals(savedSeries[0], "")){
+            if(!Objects.equals(savedSeries[0], "null")){
                 mediaList = new ArrayList<String>(Arrays.asList(savedSeries));
             }
             else{
@@ -48,7 +48,7 @@ public class User {
     public void watchedMedia(boolean a, boolean b, String str){
         if(a){
             List<String> mediaList;
-            if(!Objects.equals(watchedMovies[0], "")){
+            if(!Objects.equals(watchedMovies[0], "null")){
                 mediaList = new ArrayList<String>(Arrays.asList(watchedMovies));
             }
             else{
@@ -60,7 +60,7 @@ public class User {
         }
         if (b){
             List<String> mediaList;
-            if(!Objects.equals(watchedSeries[0], "")){
+            if(!Objects.equals(watchedSeries[0], "null")){
                 mediaList = new ArrayList<String>(Arrays.asList(watchedSeries));
             }
             else{
@@ -113,7 +113,7 @@ public class User {
 
     private String getString(String watchedMovieList, String watchedSeriesList, String[] watchedMovies, String[] watchedSeries,String noMovies, String noSeries) {
         int number=1;
-        if(Objects.equals(watchedMovies[0], "")){
+        if(Objects.equals(watchedMovies[0], "null")){
             watchedMovieList+=noMovies;
         }
         else {
@@ -122,7 +122,7 @@ public class User {
                 number++;
             }
         }
-        if (Objects.equals(watchedSeries[0],"")){
+        if (Objects.equals(watchedSeries[0],"null")){
             watchedSeriesList+=noSeries;
         }
         else {
@@ -135,3 +135,4 @@ public class User {
         return watchedMovieList+watchedSeriesList;
     }
 }
+
