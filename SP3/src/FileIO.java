@@ -22,7 +22,7 @@ public class FileIO {
     }
     public static void newUser(String username, String password){
         try {
-            String[] str = {""};
+            String[] str = {"null"};
             FileWriter writer = new FileWriter("Data/user.csv", true);
             writer.write("\n"+username+";"+password+";"+ Arrays.toString(str).replace("[","").replace("]","") +";"+ Arrays.toString(str).replace("[","").replace("]","") +";"+ Arrays.toString(str).replace("[","").replace("]","") +";"+ Arrays.toString(str).replace("[","").replace("]","") +";");
             writer.close();
@@ -68,3 +68,4 @@ public class FileIO {
         }
     }
 }
+
