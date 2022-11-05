@@ -26,7 +26,7 @@ public class startMenu {
     }
     private boolean usernameCheck(ArrayList<String> data, String username){
         for (String s : data) {
-            String[] values = s.replaceAll(" ","").split(";");
+            String[] values = s.split(";");
             if(username.equals(values[0])){
                 return true;
             }
@@ -35,7 +35,7 @@ public class startMenu {
     }
     private void createUsers(ArrayList<String> data){
         for (String s : data) {
-            String[] values = s.replaceAll(" ","").split(";");
+            String[] values = s.split(";");
             String [] savedMovies = values[2].split(",");
             String [] savedSeries = values[3].split(",");
             String [] watchedMovies = values[4].split(",");
