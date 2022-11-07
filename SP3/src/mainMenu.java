@@ -34,45 +34,17 @@ public class mainMenu {
             Movie.titleSearch(search);
 
 
-
-
-
         }
         else if(intInputMain == 4){
-            System.out.println("1. Action\n" +
-                    "2. Adventure\n" +
-                    "3. Animation\n" +
-                    "4. Biography\n" +
-                    "5. Comedy\n" +
-                    "6. Crime\n" +
-                    "7. Documentary\n" +
-                    "8. Drama\n" +
-                    "9. Family\n" +
-                    "10. Fantasy\n" +
-                    "11. Film-Noir\n" +
-                    "12. History\n" +
-                    "13. Horror\n" +
-                    "14. Musical\n" +
-                    "15. Mystery\n" +
-                    "16. Romance\n" +
-                    "17. Sci-fi\n" +
-                    "18. Sport\n" +
-                    "19. Talk-show\n" +
-                    "20. Thriller\n" +
-                    "21. War\n" +
-                    "22. Western");
-            System.out.println("Select a category or press '0' to return to main menu");
-            mediaSelector();
+            Movie.categorySearch();
         }
         else if(intInputMain == 5){
             System.out.println(startMenu.getCurrentUser().getWatched());
             System.out.println("Press '0' to return to main menu");
-            mediaSelector();
         }
         else if(intInputMain == 6){
             System.out.println(startMenu.getCurrentUser().getSaved());
             System.out.println("Press '0' to return to main menu");
-            mediaSelector();
         }
     }
     public static void mediaSelector(){
