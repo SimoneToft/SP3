@@ -26,7 +26,7 @@ public class mainMenu {
         }
         else if(intInputMain == 3){
 
-            System.out.println("Type to search, type ¨0¨ to return");
+            System.out.println("Type to search, type '0' to return");
 
             Scanner searcher = new Scanner(System.in);
             String search = searcher.nextLine();
@@ -61,12 +61,18 @@ public class mainMenu {
                     "20. Thriller\n" +
                     "21. War\n" +
                     "22. Western");
+            System.out.println("Select a category or press '0' to return to main menu");
+            mediaSelector();
         }
         else if(intInputMain == 5){
             System.out.println(startMenu.getCurrentUser().getWatched());
+            System.out.println("Press '0' to return to main menu");
+            mediaSelector();
         }
         else if(intInputMain == 6){
             System.out.println(startMenu.getCurrentUser().getSaved());
+            System.out.println("Press '0' to return to main menu");
+            mediaSelector();
         }
     }
     public static void mediaSelector(){
