@@ -26,25 +26,52 @@ public class mainMenu {
         }
         else if(intInputMain == 3){
 
-            System.out.println("Type to search, type '0' to return");
+            System.out.println("Do you want to search for a movie, or a series?");
+            System.out.println("1. Movies");
+            System.out.println("2. Series");
 
-            Scanner searcher = new Scanner(System.in);
-            String search = searcher.nextLine();
+            Scanner choiseess = new Scanner(System.in);
 
-            Movie.titleSearch(search);
+            try {
+                int choisees = choiseess.nextInt();
+                if (choisees == 1) {
+                    System.out.println("Type to search, or ¨0¨ to return");
+                    Scanner searcher = new Scanner(System.in);
+                    String search = searcher.nextLine();
 
+                    Movie.titleSearch(search);
 
-        }
+                } else if (choisees == 2) {
+
+                    System.out.println("Type to search, or ¨0¨ to return");
+                    Scanner searcher = new Scanner(System.in);
+                    String search = searcher.nextLine();
+
+                    Series.titleSearchSeries(search);
+                }
+            }
+            catch(Exception e) {
+                System.out.println("---------------------------");
+                System.out.println("Please input '1' or '2' instead");
+                System.out.println("---------------------------");
+                runMainMenu();
+            }
         else if(intInputMain == 4){
             Movie.categorySearch();
         }
         else if(intInputMain == 5){
             System.out.println(startMenu.getCurrentUser().getWatched());
             System.out.println("Press '0' to return to main menu");
+            if (keyboard.nextInt() == 0) {
+                runMainMenu();
+            }
         }
         else if(intInputMain == 6){
             System.out.println(startMenu.getCurrentUser().getSaved());
             System.out.println("Press '0' to return to main menu");
+            if (keyboard.nextInt() == 0) {
+                runMainMenu();
+            }
         }
     }
     public static void mediaSelector(){
@@ -81,5 +108,11 @@ public class mainMenu {
             System.out.println(mediaTitle+" is now saved.");
             runMainMenu();
         }
-    }
+        else if (intInputMain > 6 || intInputMain < 0) {
+            System.out.println("---------------------------");
+            System.out.println("Please type '1-6' instead");
+            System.out.println("---------------------------");
+            runMainMenu();
+        }
+    }      
 }
