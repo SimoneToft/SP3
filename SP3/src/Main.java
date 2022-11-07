@@ -34,6 +34,7 @@ public class Main {
             }
             }
         if(loggedIn){
+            mainMenu.mediaCreate();
             mainMenu.runMainMenu();
         }
         }
