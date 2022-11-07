@@ -10,42 +10,17 @@ public class Main {
 
         Scanner keyboard = new Scanner(System.in);
         Scanner keyboardsignup = new Scanner(System.in);
-        int intInputMain;
+        Scanner keyboardlogin = new Scanner(System.in);
+        boolean loggingIn=false;
+        boolean signingUp=false;
 
         try {
-            intInputMain = keyboard.nextInt();
+            int intInputMain = keyboard.nextInt();
 
             if (intInputMain == 1) {
-                Scanner keyboardlogin = new Scanner(System.in);
-                System.out.println("Type your username:");
-                String inputusername = keyboardlogin.nextLine();
-                System.out.println("Type your password:");
-                String inputpassword = keyboardlogin.nextLine();
-                if (startmenu.runLogin(inputusername, inputpassword)) {
-                    System.out.println("---------------------");
-                    System.out.println("You are now logged in");
-                    System.out.println("---------------------");
-                    mainMenu.mediaCreate();
-                    mainMenu.runMainMenu();
-                } else {
-                    System.out.println("----------------");
-                    System.out.println("Incorrect log-in");
-                    System.out.println("----------------");
-                    loginScreen();
-                }
-            } else if (intInputMain == 2) {
-                System.out.println("Select a username:");
-                String signupusername = keyboardsignup.nextLine();
-                System.out.println("Select a password:");
-                String signuppassword = keyboardsignup.nextLine();
-                startmenu.addUser(signupusername, signuppassword);
-                loginScreen();
-            }
-            else if(intInputMain > 2 || intInputMain <0){
-                System.out.println("-------------------------------");
-                System.out.println("Please input '1' or '2' instead");
-                System.out.println("-------------------------------");
-                loginScreen();
+                loggingIn=true;
+            }  else if (intInputMain == 2) {
+                signingUp=true;
             }
         }
         catch (Exception e){
@@ -54,9 +29,31 @@ public class Main {
             System.out.println("-------------------------------");
             loginScreen();
         }
-
-
+        while(loggingIn==true){
+            System.out.println("Type your username:");
+            String inputusername = keyboardlogin.nextLine();
+            System.out.println("Type your password:");
+            String inputpassword = keyboardlogin.nextLine();
+            if (startmenu.runLogin(inputusername, inputpassword)) {
+                System.out.println("---------------------");
+                System.out.println("You are now logged in");
+                System.out.println("---------------------");
+                mainMenu.mediaCreate();
+                mainMenu.runMainMenu();
+            } else {
+                System.out.println("----------------");
+                System.out.println("Incorrect log-in");
+                System.out.println("----------------");
+                loginScreen();
+            }
+        }
+        while (signingUp==true){
+            System.out.println("Select a username:");
+            String signupusername = keyboardsignup.nextLine();
+            System.out.println("Select a password:");
+            String signuppassword = keyboardsignup.nextLine();
+            startmenu.addUser(signupusername, signuppassword);
+            loginScreen();
+        }
     }
-
-
 }
