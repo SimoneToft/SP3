@@ -71,9 +71,16 @@ public class mainMenu {
             System.out.println("Press '0' to return to main menu");
             if (keyboard.nextInt() == 0) {
                 runMainMenu();
+                }
             }
-        }
+         else if (intInputMain > 6 || intInputMain < 0) {
+            System.out.println("---------------------------");
+            System.out.println("Please type '1-6' instead");
+            System.out.println("---------------------------");
+            runMainMenu();
+          }
     }
+        
     public static void mediaSelector(){
         Scanner keyboard = new Scanner(System.in);
         int input= keyboard.nextInt();
@@ -106,12 +113,6 @@ public class mainMenu {
         else if(mediaChoice==2){
             startMenu.getCurrentUser().saveMedia(moviesDisplayed,seriesDisplayed,mediaTitle);
             System.out.println(mediaTitle+" is now saved.");
-            runMainMenu();
-        }
-        else if (intInputMain > 6 || intInputMain < 0) {
-            System.out.println("---------------------------");
-            System.out.println("Please type '1-6' instead");
-            System.out.println("---------------------------");
             runMainMenu();
         }
     }      
