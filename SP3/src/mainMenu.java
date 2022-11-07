@@ -56,6 +56,7 @@ public class mainMenu {
                 System.out.println("---------------------------");
                 runMainMenu();
             }
+        }
         else if(intInputMain == 4){
             Movie.categorySearch();
         }
