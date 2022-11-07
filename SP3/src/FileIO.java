@@ -59,7 +59,7 @@ public class FileIO {
             FileWriter writer = new FileWriter("SP3/Data/user.csv");
             writer.write("userName, userPassword, savedMovies, savedSeries, watchedMovies, watchedSeries\n");
             for (User p : users){
-                writer.write(p.getUsername()+";"+p.getPassword()+";"+ Arrays.toString(p.getSavedMovies()).replace("[","").replace("]","") +";"+ Arrays.toString(p.getSavedSeries()).replace("[","").replace("]","") +";"+ Arrays.toString(p.getWatchedMovies()).replace("[","").replace("]","") +";"+ Arrays.toString(p.getWatchedSeries()).replace("[","").replace("]","") +"\n");
+                writer.write(p.getUsername()+";"+p.getPassword()+";"+Arrays.toString(p.getSavedMovies()).replace("[","").replace("]","").replace(", ",",") +";"+ Arrays.toString(p.getSavedSeries()).replace("[","").replace("]","").replace(", ",",") +";"+ Arrays.toString(p.getWatchedMovies()).replace("[","").replace("]","").replace(", ",",") +";"+ Arrays.toString(p.getWatchedSeries()).replace("[","").replace("]","").replace(", ",",") +"\n");
             }
             writer.close();
         }
