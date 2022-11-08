@@ -39,7 +39,7 @@ public class Series {
                 number++;
             }
         }
-        System.out.println("Select a movie, or press ¨0¨ to return");
+        System.out.println("Select a movie, or press '0' to return");
         Scanner choice = new Scanner(System.in);
         int nextChoice = choice.nextInt();
 

@@ -35,7 +35,7 @@ public class mainMenu {
             try {
                 int choisees = choiseess.nextInt();
                 if (choisees == 1) {
-                    System.out.println("Type to search, or ¨0¨ to return");
+                    System.out.println("Type to search, or '0' to return");
                     Scanner searcher = new Scanner(System.in);
                     String search = searcher.nextLine();
 
@@ -43,7 +43,7 @@ public class mainMenu {
 
                 } else if (choisees == 2) {
 
-                    System.out.println("Type to search, or ¨0¨ to return");
+                    System.out.println("Type to search, or '0' to return");
                     Scanner searcher = new Scanner(System.in);
                     String search = searcher.nextLine();
 
