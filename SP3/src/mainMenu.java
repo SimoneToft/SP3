@@ -11,75 +11,88 @@ public class mainMenu {
         Scanner keyboard = new Scanner(System.in);
         System.out.println("1. View all movies\n2. View all series\n3. Search\n4. Categories\n5. Watched\n6. Saved");
         int intInputMain;
-        intInputMain = keyboard.nextInt();
-        if(intInputMain == 1){
-            mediaAmount=createMedia.allMovies();
-            moviesDisplayed=true;
-            System.out.println("Select a movie or press '0' to return to main menu");
-            mediaSelector();
-        }
-        else if(intInputMain == 2){
-            mediaAmount=createMedia.allSeries();
-            seriesDisplayed=true;
-            System.out.println("Select a series or press '0' to return to main menu");
-            mediaSelector();
-        }
-        else if(intInputMain == 3){
+        
+        try {
+            intInputMain = keyboard.nextInt();
 
-            System.out.println("Do you want to search for a movie, or a series?");
-            System.out.println("1. Movies");
-            System.out.println("2. Series");
+            if (intInputMain == 1) {
+                mediaAmount = createMedia.allMovies();
+                moviesDisplayed = true;
+                System.out.println("Select a movie or press '0' to return to main menu");
+                mediaSelector();
+            } else if (intInputMain == 2) {
+                mediaAmount = createMedia.allSeries();
+                seriesDisplayed = true;
+                System.out.println("Select a series or press '0' to return to main menu");
+                mediaSelector();
+            } else if (intInputMain == 3) {
 
-            Scanner choiseess = new Scanner(System.in);
+                System.out.println("Do you want to search for a movie, or a series?");
+                System.out.println("1. Movies");
+                System.out.println("2. Series");
 
-            try {
-                int choisees = choiseess.nextInt();
-                if (choisees == 1) {
-                    System.out.println("Type to search, or ¨0¨ to return");
-                    Scanner searcher = new Scanner(System.in);
-                    String search = searcher.nextLine();
+                Scanner choiseess = new Scanner(System.in);
 
-                    Movie.titleSearch(search);
+                try {
+                    int choisees = choiseess.nextInt();
+                    if (choisees == 1) {
+                        System.out.println("Type to search, or ¨0¨ to return");
+                        Scanner searcher = new Scanner(System.in);
+                        String search = searcher.nextLine();
 
-                } else if (choisees == 2) {
+                        Movie.titleSearch(search);
 
-                    System.out.println("Type to search, or ¨0¨ to return");
-                    Scanner searcher = new Scanner(System.in);
-                    String search = searcher.nextLine();
+                    } else if (choisees == 2) {
 
-                    Series.titleSearchSeries(search);
+                        System.out.println("Type to search, or '0' to return");
+                        Scanner searcher = new Scanner(System.in);
+                        String search = searcher.nextLine();
+
+                        Series.titleSearchSeries(search);
+                    }
+                    else if (choisees!= 1 || choisees!= 2){
+                        System.out.println("---------------------------");
+                        System.out.println("Please input '1' or '2' instead");
+                        System.out.println("---------------------------");
+                        runMainMenu();
+                    }
+                } catch (Exception e) {
+                    System.out.println("---------------------------");
+                    System.out.println("Please input '1' or '2' instead");
+                    System.out.println("---------------------------");
+                    runMainMenu();
+
                 }
-            }
-            catch(Exception e) {
-                System.out.println("---------------------------");
-                System.out.println("Please input '1' or '2' instead");
-                System.out.println("---------------------------");
-                runMainMenu();
-            }
-        }
-        else if (intInputMain == 4){
-            Movie.categorySearch();
-        }
-        else if(intInputMain == 5){
-            System.out.println(startMenu.getCurrentUser().getWatched());
-            System.out.println("Press '0' to return to main menu");
-            if (keyboard.nextInt() == 0) {
-                runMainMenu();
-            }
-        }
-        else if(intInputMain == 6){
-            System.out.println(startMenu.getCurrentUser().getSaved());
-            System.out.println("Press '0' to return to main menu");
-            if (keyboard.nextInt() == 0) {
-                runMainMenu();
+            } else if (intInputMain == 4) {
+                Movie.categorySearch();
+            } else if (intInputMain == 5) {
+                System.out.println(startMenu.getCurrentUser().getWatched());
+                System.out.println("Press '0' to return to main menu");
+                if (keyboard.nextInt() == 0) {
+                    runMainMenu();
                 }
+                else if (keyboard.nextInt() != 0) {
+                    System.out.println("Press '0' to return to main menu");
+                }
+            } else if (intInputMain == 6) {
+                System.out.println(startMenu.getCurrentUser().getSaved());
+                System.out.println("Press '0' to return to main menu");
+                if (keyboard.nextInt() == 0) {
+                    runMainMenu();
+                }
+            } else if (intInputMain > 6 || intInputMain <= 0) {                 //number-typo
+                System.out.println("---------------------------");
+                System.out.println("Please type '1-6' instead");
+                System.out.println("---------------------------");
+                runMainMenu();
             }
-         else if (intInputMain > 6 || intInputMain < 0) {
-            System.out.println("---------------------------");
-            System.out.println("Please type '1-6' instead");
-            System.out.println("---------------------------");
+        }
+        catch (Exception e){
+            System.out.println("-------------------------------------------");  //wrongful input
+            System.out.println("Please input a corresponding number instead");
+            System.out.println("-------------------------------------------");
             runMainMenu();
-          }
+        }
     }
         
     public static void mediaSelector(){
