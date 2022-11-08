@@ -49,8 +49,7 @@ public class mainMenu {
                         String search = searcher.nextLine();
 
                         Series.titleSearchSeries(search);
-                    }
-                    else if (choisees!= 1 || choisees!= 2){
+                    } else if (choisees != 1 || choisees != 2) {
                         System.out.println("---------------------------");
                         System.out.println("Please input '1' or '2' instead");
                         System.out.println("---------------------------");
@@ -61,8 +60,41 @@ public class mainMenu {
                     System.out.println("Please input '1' or '2' instead");
                     System.out.println("---------------------------");
                     runMainMenu();
+
                 }
+            } else if (intInputMain == 4) {
+                Movie.categorySearch();
+            } else if (intInputMain == 5) {
+                System.out.println(startMenu.getCurrentUser().getWatched());
+                System.out.println("Press '0' to return to main menu");
+                Scanner newkeyboard = new Scanner(System.in);
+                int nextkey = newkeyboard.nextInt();
+                if (nextkey == 0 ||nextkey  != 0) {
+                    runMainMenu();
+                }
+            } else if (intInputMain == 6) {
+                System.out.println(startMenu.getCurrentUser().getSaved());
+                System.out.println("Press '0' to return to main menu");
+                Scanner newkeyboard = new Scanner(System.in);
+                int nextkey = newkeyboard.nextInt();
+                if (nextkey == 0 ||nextkey  != 0) {
+                    runMainMenu();
+                }
+            } else if (intInputMain > 6 || intInputMain <= 0) {                 //number-typo
+                System.out.println("-------------------------");
+                System.out.println("Please type '1-6' instead");
+                System.out.println("-------------------------");
+                runMainMenu();
+
             }
+        } catch (Exception e) {
+            System.out.println("-------------------------------------------");  //wrongful input
+            System.out.println("Please input a corresponding number instead");
+            System.out.println("-------------------------------------------");
+            runMainMenu();
+        }
+     }
+
         
     public static void mediaSelector(){
         Scanner keyboard = new Scanner(System.in);

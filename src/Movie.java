@@ -33,6 +33,14 @@ public class Movie {
                     number++;
                 }
             }
+
+                if (movieSearch.size()<=0) {
+               System.out.println("----------------------------------------------");
+               System.out.println("There are no matching movies, please try again");
+               System.out.println("----------------------------------------------");
+               mainMenu.runMainMenu();
+           }
+
                 System.out.println("Select a movie, or press '0' to return");
                 Scanner choice = new Scanner(System.in);
                 try {
@@ -59,7 +67,6 @@ public class Movie {
                     System.out.println("------------------------------");
                     System.out.println("Please input a number instead");
                     System.out.println("------------------------------");
-                    
                     titleSearch(search);
                 }
             }
@@ -121,11 +128,16 @@ public class Movie {
             }
         }
         else {
-            System.out.println("No movies were found in that category, press '0' to return");
+            System.out.println("---------------------------------------------------------");
+            System.out.println("No movies were found in that category, type '0' to return");
+            System.out.println("---------------------------------------------------------");
             Scanner choice = new Scanner(System.in);
             int nextChoice = choice.nextInt();
 
             if (nextChoice == 0) {
+                categorySearch();
+            }
+            else if (nextChoice!=0){
                 categorySearch();
             }
         }

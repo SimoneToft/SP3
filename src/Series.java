@@ -57,7 +57,8 @@ public class Series {
             System.out.println("-----------------------------------------");
 
             titleSearchSeries(search);
-        } 
+        }
+
     }
 
 
