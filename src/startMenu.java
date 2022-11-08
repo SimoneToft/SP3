@@ -5,8 +5,12 @@ public class startMenu {
     public FileIO fileIO = new FileIO();
     public static User currentUser;
     ArrayList<String> userdata = fileIO.readUserData();
+    boolean usersCreated = false;
     public boolean runLogin(String username, String password){
-        this.createUsers(fileIO.readUserData());
+        if (!usersCreated){
+            this.createUsers(fileIO.readUserData());
+            usersCreated=true;
+        }
         return this.loginCheck(users,username,password);
     }
     public static void saveUsers(){
@@ -20,7 +24,12 @@ public class startMenu {
             System.out.println("This username is taken");
         }
         else {
-            FileIO.newUser(username, password);
+            String[] str = {"none"};
+            String[] str2 = {"none"};
+            String[] str3 = {"none"};
+            String[] str4 = {"none"};
+            User p = new User(username,password,str,str2,str3,str4);
+            users.add(p);
             System.out.println("New user created!");
         }
     }

@@ -1,31 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="d6fad37d-c112-4db9-a9e4-6adca26b8828" name="Changes" comment="" />
+=======
+    <list default="true" id="47d8fd57-be6e-45c3-bdb9-ae36cc100506" name="Changes" comment="" />
+>>>>>>> e07afc135307c2f99174b0af2d30adf70cdef92b
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2HE1eme095mbgvWVYdrAoxF7qni" />
+=======
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2H3eF96xtIUTYnj2tNlmAMIWQSC" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+>>>>>>> e07afc135307c2f99174b0af2d30adf70cdef92b
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/tobia/IdeaProjects/SP3 Git&quot;
+=======
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/g4m3r/Documents/GitHub/SP3"
+>>>>>>> e07afc135307c2f99174b0af2d30adf70cdef92b
   }
-}</component>
+}]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="SP3" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="SP3" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
       <changelist id="d6fad37d-c112-4db9-a9e4-6adca26b8828" name="Changes" comment="" />
       <created>1667835526230</created>
       <option name="number" value="Default" />
@@ -36,10 +83,48 @@
       <workItem from="1667849250016" duration="3190000" />
       <workItem from="1667852478884" duration="70000" />
       <workItem from="1667903933113" duration="2179000" />
+=======
+      <changelist id="47d8fd57-be6e-45c3-bdb9-ae36cc100506" name="Changes" comment="" />
+      <created>1667518087301</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1667518087301</updated>
+      <workItem from="1667518088508" duration="1710000" />
+      <workItem from="1667556982524" duration="4441000" />
+      <workItem from="1667821468561" duration="51000" />
+      <workItem from="1667821524882" duration="1002000" />
+      <workItem from="1667822697631" duration="9908000" />
+      <workItem from="1667906182560" duration="93000" />
+      <workItem from="1667906282848" duration="208000" />
+>>>>>>> e07afc135307c2f99174b0af2d30adf70cdef92b
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+<<<<<<< HEAD
+=======
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+>>>>>>> e07afc135307c2f99174b0af2d30adf70cdef92b
 </project>
