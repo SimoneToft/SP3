@@ -16,7 +16,7 @@ public class Movie {
         this.mediaReleaseYear = mediaReleaseYear;
     }
 
-        public static void titleSearch(String search) {
+       public static void titleSearch(String search) {
             List<Movie> movieSearch = new ArrayList<>();
             int number = 1;
             if (search.matches("0")) {
@@ -35,14 +35,30 @@ public class Movie {
             }
                 System.out.println("Select a movie, or press '0' to return");
                 Scanner choice = new Scanner(System.in);
-                int nextChoice = choice.nextInt();
+                try {
+                    int nextChoice = choice.nextInt();
 
-                if (nextChoice == 0) {
-                    mainMenu.runMainMenu();
+                    if (nextChoice == 0) {
+                        mainMenu.runMainMenu();
 
-                } else if (nextChoice <= movieSearch.size()) {
-                    String movieTitle = movieSearch.get(nextChoice - 1).getMediaTitle();
-                    mainMenu.mediaPlayer(movieTitle, true, false);
+                    } else if (nextChoice <= movieSearch.size()) {
+                        String movieTitle = movieSearch.get(nextChoice - 1).getMediaTitle();
+                        mainMenu.mediaPlayer(movieTitle, true, false);
+                    }
+                    else if (nextChoice > movieSearch.size()||nextChoice < movieSearch.size()){
+
+                        System.out.println("-----------------------------------------");
+                        System.out.println("The movie was not found, please try again");
+                        System.out.println("-----------------------------------------");
+
+                        titleSearch(search);
+
+                    }
+                }
+                catch (Exception e){
+                    System.out.println("------------------------------");
+                    System.out.println("Please input a number instead");
+                    System.out.println("------------------------------");
                 }
             }
     public static void categorySearch() {
