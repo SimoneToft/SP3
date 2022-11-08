@@ -50,8 +50,16 @@ public class Series {
             String movieTitle = seriesSearch.get(nextChoice - 1).getMediaTitle();
             mainMenu.mediaPlayer(movieTitle, true, false);
         }
-    }
+        else if (nextChoice > seriesSearch.size()||nextChoice < seriesSearch.size()){
 
+            System.out.println("-----------------------------------------");
+            System.out.println("The movie was not found, please try again");
+            System.out.println("-----------------------------------------");
+
+            titleSearchSeries(search);
+
+        }
+    }
     @Override
     public String toString() {
         return "|SERIES| " + mediaTitle +
