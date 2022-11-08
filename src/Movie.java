@@ -59,6 +59,8 @@ public class Movie {
                     System.out.println("------------------------------");
                     System.out.println("Please input a number instead");
                     System.out.println("------------------------------");
+                    
+                    titleSearch(search);
                 }
             }
     public static void categorySearch() {
