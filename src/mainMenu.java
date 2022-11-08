@@ -9,6 +9,8 @@ public class mainMenu {
     }
     public static void runMainMenu() {
         Scanner keyboard = new Scanner(System.in);
+        moviesDisplayed = false;
+        seriesDisplayed = false;
         System.out.println("1. View all movies\n2. View all series\n3. Search\n4. Categories\n5. Watched\n6. Saved");
         int intInputMain;
 
@@ -36,7 +38,7 @@ public class mainMenu {
                 try {
                     int choisees = choiseess.nextInt();
                     if (choisees == 1) {
-                        System.out.println("Type to search, or ¨0¨ to return");
+                        System.out.println("Type to search, or '0' to return");
                         Scanner searcher = new Scanner(System.in);
                         String search = searcher.nextLine();
 
@@ -107,6 +109,12 @@ public class mainMenu {
             mediaPlayer(mediaTitle, moviesDisplayed, seriesDisplayed);
         }
         else if(input==0){
+            runMainMenu();
+        }
+        else if (choice>mediaAmount){
+            System.out.println("---------------------------------------------");
+            System.out.println("There was no matching movie, please try again");
+            System.out.println("---------------------------------------------");
             runMainMenu();
         }
     }

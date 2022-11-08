@@ -39,7 +39,15 @@ public class Series {
                 number++;
             }
         }
-        System.out.println("Select a movie, or press ¨0¨ to return");
+
+        if (seriesSearch.size()<=0) {
+            System.out.println("----------------------------------------------");
+            System.out.println("There are no matching movies, please try again");
+            System.out.println("----------------------------------------------");
+            mainMenu.runMainMenu();
+        }
+
+        System.out.println("Select a series, or press ¨0¨ to return");
         Scanner choice = new Scanner(System.in);
         int nextChoice = choice.nextInt();
 
@@ -53,7 +61,7 @@ public class Series {
         else if (nextChoice > seriesSearch.size()||nextChoice < seriesSearch.size()){
 
             System.out.println("-----------------------------------------");
-            System.out.println("The movie was not found, please try again");
+            System.out.println("The series was not found, please try again");
             System.out.println("-----------------------------------------");
 
             titleSearchSeries(search);
