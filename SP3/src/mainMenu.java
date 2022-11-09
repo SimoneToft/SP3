@@ -136,6 +136,9 @@ public class mainMenu {
             System.out.println("------------------");
             runMainMenu();
         }
+        mainMenu.spaces();
+        System.out.println("------------------");
+        runMainMenu();
     }
     public static void mediaPlayer(String mediaTitle, boolean moviesDisplayed, boolean seriesDisplayed){
         Scanner keyboard = new Scanner(System.in);
