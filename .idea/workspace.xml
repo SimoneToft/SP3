@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="493de6d9-02b9-48ce-9464-49d97e612729" name="Changes" comment="input error fixes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SP3/src/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/SP3/src/Movie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SP3/src/Series.java" beforeDir="false" afterPath="$PROJECT_DIR$/SP3/src/Series.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SP3/src/mainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/SP3/src/mainMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,15 +27,15 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/tobia/IdeaProjects/SP3 Git Drop"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/daniel/Documents/GitHub/SP3&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -46,6 +49,8 @@
       <workItem from="1667487876736" duration="208000" />
       <workItem from="1667488095281" duration="252000" />
       <workItem from="1667996490462" duration="4832000" />
+      <workItem from="1668002448346" duration="36000" />
+      <workItem from="1668002538376" duration="892000" />
     </task>
     <task id="LOCAL-00001" summary="input error fixes">
       <created>1667997633138</created>

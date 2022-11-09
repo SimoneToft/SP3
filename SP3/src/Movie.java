@@ -97,15 +97,16 @@ public class Movie {
                     "11. Film-Noir\n" +
                     "12. History\n" +
                     "13. Horror\n" +
-                    "14. Musical\n" +
-                    "15. Mystery\n" +
-                    "16. Romance\n" +
-                    "17. Sci-fi\n" +
-                    "18. Sport\n" +
-                    "19. Talk-show\n" +
-                    "20. Thriller\n" +
-                    "21. War\n" +
-                    "22. Western");
+                    "14. Music\n" +
+                    "15. Musical\n" +
+                    "16. Mystery\n" +
+                    "17. Romance\n" +
+                    "18. Sci-fi\n" +
+                    "19. Sport\n" +
+                    "20. Talk-show\n" +
+                    "21. Thriller\n" +
+                    "22. War\n" +
+                    "23. Western");
             System.out.println("-----------------------------------------------------");
             System.out.println("Select a category or press '0' to return to main menu");
             System.out.println("-----------------------------------------------------");
@@ -116,6 +117,8 @@ public class Movie {
             ArrayList<Movie> foundMovies = new ArrayList<>();
             int movieNumber = 1;
             if (input == 0) {
+                mainMenu.spaces();
+                System.out.println("------------------");
                 mainMenu.runMainMenu();
             }
 
@@ -139,6 +142,8 @@ public class Movie {
                 int nextChoice = choice.nextInt();
 
                 if (nextChoice == 0) {
+                    mainMenu.spaces();
+                    System.out.println("------------------");
                     mainMenu.runMainMenu();
 
                 } else if (nextChoice <= foundMovies.size()) {

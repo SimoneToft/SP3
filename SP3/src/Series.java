@@ -124,6 +124,8 @@ public class Series {
         ArrayList<Series> foundSeries = new ArrayList<>();
         int seriesNumber = 1;
         if (input == 0) {
+            mainMenu.spaces();
+            System.out.println("------------------");
             mainMenu.runMainMenu();
         }
 
@@ -147,6 +149,8 @@ public class Series {
             int nextChoice = choice.nextInt();
 
             if (nextChoice == 0) {
+                mainMenu.spaces();
+                System.out.println("------------------");
                 mainMenu.runMainMenu();
 
             } else if (nextChoice <= foundSeries.size()) {

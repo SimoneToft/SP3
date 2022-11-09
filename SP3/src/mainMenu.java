@@ -194,8 +194,11 @@ public class mainMenu {
         }
         else
         {
-            System.out.println("you dumb fuck you had two choices and you failed");
-            mainMenu.runMainMenu();
+            mainMenu.spaces();
+            System.out.println("-------------------------");
+            System.out.println("Please type '1-2' instead");
+            System.out.println("-------------------------");
+            runMainMenu();
         }
     }
 }
