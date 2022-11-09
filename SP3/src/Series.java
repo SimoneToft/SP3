@@ -85,4 +85,88 @@ public class Series {
                 " |YEAR| = " + mediaReleaseYear+
                 " |SEASONS-EPISODES| "+ Arrays.toString(seriesSeasons).replace("[","").replace("]","");
     }
+    public static void seriesCategorySearch()
+    {
+        System.out.println("------------------------");
+        System.out.println("You have selected series");
+        System.out.println("------------------------");
+
+        System.out.println("1. Action\n" +
+                "2. Adventure\n" +
+                "3. Animation\n" +
+                "4. Biography\n" +
+                "5. Comedy\n" +
+                "6. Crime\n" +
+                "7. Documentary\n" +
+                "8. Drama\n" +
+                "9. Family\n" +
+                "10. Fantasy\n" +
+                "11. Film-Noir\n" +
+                "12. History\n" +
+                "13. Horror\n" +
+                "14. Music\n" +
+                "15. Musical\n" +
+                "16. Mystery\n" +
+                "17. Romance\n" +
+                "18. Sci-fi\n" +
+                "19. Sport\n" +
+                "20. Talk-show\n" +
+                "21. Thriller\n" +
+                "22. War\n" +
+                "23. Western");
+        System.out.println("-----------------------------------------------------");
+        System.out.println("Select a category or press '0' to return to main menu");
+        System.out.println("-----------------------------------------------------");
+        String[] categoryChoice = {"Action", "Adventure", "Animation", "Biography", "Comedy", "Crime", "Documentary", "Drama", "Family", "Fantasy", "Film-Noir", "History", "Horror", "Music", "Musical", "Mystery", "Romance", "Sci-fi", "Sport", "Talk-show", "Thriller", "War", "Western"};
+        Scanner catChoice = new Scanner(System.in);
+        int input = catChoice.nextInt();
+        int choiceNumber = -1 + input;
+        ArrayList<Series> foundSeries = new ArrayList<>();
+        int seriesNumber = 1;
+        if (input == 0) {
+            mainMenu.runMainMenu();
+        }
+
+        for (Series p : createMedia.series) {
+            for (String s : p.mediaCategory) {
+                if (s.contains(categoryChoice[choiceNumber])) {
+                    foundSeries.add(p);
+                }
+            }
+        }
+
+        if (foundSeries.size() > 0) {
+            for (Series p : foundSeries) {
+                System.out.println(seriesNumber + ". " + p);
+                seriesNumber++;
+            }
+            System.out.println("--------------------------------------");
+            System.out.println("Select a serie, or press '0' to return");
+            System.out.println("--------------------------------------");
+            Scanner choice = new Scanner(System.in);
+            int nextChoice = choice.nextInt();
+
+            if (nextChoice == 0) {
+                mainMenu.runMainMenu();
+
+            } else if (nextChoice <= foundSeries.size()) {
+                String seriesTitle = foundSeries.get(nextChoice - 1).getMediaTitle();
+                System.out.println("-------------------------------");
+                System.out.println("You have selected "+ seriesTitle);
+                mainMenu.mediaPlayer(seriesTitle, false, true);
+            }
+        } else {
+            System.out.println("---------------------------------------------------------");
+            System.out.println("No series were found in that category, type '0' to return");
+            System.out.println("---------------------------------------------------------");
+            Scanner choice = new Scanner(System.in);
+            int nextChoice = choice.nextInt();
+
+            if (nextChoice == 0) {
+                seriesCategorySearch();
+            } else if (nextChoice != 0) {
+                seriesCategorySearch();
+            }
+        }
+    }
 }

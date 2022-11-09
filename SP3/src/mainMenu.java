@@ -76,7 +76,7 @@ public class mainMenu {
 
                 }
             } else if (intInputMain == 4) {
-                Movie.categorySearch();
+                categorySearch();
             } else if (intInputMain == 5) {
                 System.out.println(startMenu.getCurrentUser().getWatched());
                 System.out.println("--------------------------------");
@@ -170,6 +170,29 @@ public class mainMenu {
         for(i = 0 ; i < 50 ;){
             System.out.println("");
             i++;
+        }
+    }
+    public static void categorySearch() {
+        System.out.println("-------------------------------------------");
+        System.out.println("Do you want to search for movies or series?");
+        System.out.println("1. Movies");
+        System.out.println("2. Series");
+        System.out.println("-------------------------------------------");
+        Scanner movieorseries = new Scanner(System.in);
+        String inputmovieorseries = movieorseries.nextLine();
+        if (inputmovieorseries.equals("1")) {
+            Movie movieTemp = new Movie(null, null, null, null);
+            movieTemp.movieCategorySearch();
+        }
+        if (inputmovieorseries.equals("2"))
+        {
+            Series seriesTemp = new Series(null, null, null, null, null);
+            seriesTemp.seriesCategorySearch();
+        }
+        else
+        {
+            System.out.println("you dumb fuck you had two choices and you failed");
+            mainMenu.runMainMenu();
         }
     }
 }
