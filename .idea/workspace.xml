@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="493de6d9-02b9-48ce-9464-49d97e612729" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SP3/Data/series.csv" beforeDir="false" afterPath="$PROJECT_DIR$/SP3/Data/series.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SP3/src/FileIO.java" beforeDir="false" afterPath="$PROJECT_DIR$/SP3/src/FileIO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SP3/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/SP3/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SP3/src/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/SP3/src/Movie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SP3/src/Series.java" beforeDir="false" afterPath="$PROJECT_DIR$/SP3/src/Series.java" afterDir="false" />
+    <list default="true" id="493de6d9-02b9-48ce-9464-49d97e612729" name="Changes" comment="input error fixes">
+      <change beforePath="$PROJECT_DIR$/out/production/SP3/FileIO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SP3/FileIO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SP3/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SP3/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SP3/Movie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SP3/Movie.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SP3/Series.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SP3/Series.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SP3/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SP3/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SP3/mainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SP3/mainMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SP3/startMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SP3/startMenu.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,8 +51,16 @@
       <workItem from="1667487764885" duration="72000" />
       <workItem from="1667487876736" duration="208000" />
       <workItem from="1667488095281" duration="252000" />
-      <workItem from="1667996490462" duration="872000" />
+      <workItem from="1667996490462" duration="1208000" />
     </task>
+    <task id="LOCAL-00001" summary="input error fixes">
+      <created>1667997633138</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1667997633138</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -70,5 +79,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="input error fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="input error fixes" />
   </component>
 </project>
