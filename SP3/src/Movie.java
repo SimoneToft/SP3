@@ -32,13 +32,12 @@ public class Movie {
                     System.out.println(number + ". " + p);
                     number++;
                 }
-            }
-
                 if (movieSearch.size()<=0) {
-               System.out.println("----------------------------------------------");
-               System.out.println("There are no matching movies, please try again");
-               System.out.println("----------------------------------------------");
-               mainMenu.runMainMenu();
+                    System.out.println("----------------------------------------------");
+                    System.out.println("There are no matching movies, please try again");
+                    System.out.println("----------------------------------------------");
+                    mainMenu.runMainMenu();
+                }
            }
                 System.out.println("--------------------------------------");
                 System.out.println("Select a movie, or press '0' to return");

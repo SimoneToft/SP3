@@ -7,7 +7,7 @@ import java.io.FileWriter;
 
 public class FileIO {
     public ArrayList<String> readUserData(){
-        File userfile = new File("Data/user.csv");
+        File userfile = new File("SP3/Data/user.csv");
         ArrayList<String> userdata = new ArrayList<>();
         try{
             Scanner input = new Scanner(userfile);
@@ -21,7 +21,7 @@ public class FileIO {
         return userdata;
     }
     public ArrayList<String> readMovieData(){
-        File userfile = new File("Data/movies.csv");
+        File userfile = new File("SP3/Data/movies.csv");
         return getStrings(userfile);
     }
 
@@ -39,12 +39,12 @@ public class FileIO {
     }
 
     public ArrayList<String> readSeriesData(){
-        File userfile = new File("Data/series.csv");
+        File userfile = new File("SP3/Data/series.csv");
         return getStrings(userfile);
     }
     public static void writeUserData(ArrayList<User> users){
         try{
-            FileWriter writer = new FileWriter("Data/user.csv");
+            FileWriter writer = new FileWriter("SP3/Data/user.csv");
             writer.write("userName, userPassword, savedMovies, savedSeries, watchedMovies, watchedSeries");
             for (User p : users){
                 writer.write("\n"+p.getUsername()+";"+p.getPassword()+";"+Arrays.toString(p.getSavedMovies()).replace("[","").replace("]","").replace(", ",",") +";"+ Arrays.toString(p.getSavedSeries()).replace("[","").replace("]","").replace(", ",",") +";"+ Arrays.toString(p.getWatchedMovies()).replace("[","").replace("]","").replace(", ",",") +";"+ Arrays.toString(p.getWatchedSeries()).replace("[","").replace("]","").replace(", ",","));

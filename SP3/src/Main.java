@@ -25,16 +25,14 @@ public class Main {
                 signingUp=true;
             }
             else if (intInputMain!=1||intInputMain!=2){
-                System.out.println("-------------------------------");
+                System.out.println("--------------------------------");
                 System.out.println("Please input '1' or '2' instead");
-                System.out.println("-------------------------------");
                 loginScreen();
             }
         }
         catch (Exception e){
-            System.out.println("-------------------------------");
+            System.out.println("--------------------------------");
             System.out.println("Please input '1' or '2' instead");
-            System.out.println("-------------------------------");
             loginScreen();
         }
         while(loggingIn==true){
