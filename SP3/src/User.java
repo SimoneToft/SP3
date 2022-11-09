@@ -21,107 +21,54 @@ public class User {
     }
     public void saveMedia(boolean a, boolean b, String str){
         if(a){
-            List<String> saveMovieList;
-            boolean alreadySaved = false;
-            if(!Objects.equals(savedMovies[0], "none")){
-                saveMovieList = new ArrayList<String>(Arrays.asList(savedMovies));
+            List<String> mediaList;
+            if(!Objects.equals(savedMovies[0], "null")){
+                mediaList = new ArrayList<String>(Arrays.asList(savedMovies));
             }
             else{
-                saveMovieList = new ArrayList<String>();
+                mediaList = new ArrayList<String>();
             }
-            for(String saved : savedMovies)
-            {
-                if(saved.contains(str))
-                {
-                    alreadySaved = true;
-                    System.out.println(str+" is already saved");
-                    System.out.println("-------------------------------");
-                    break;
-                }
-            }
-            if(!alreadySaved) {
-                saveMovieList.add(str);
-                savedMovies = saveMovieList.toArray(savedMovies);
-                System.out.println(str+" is now saved.");
-                System.out.println("-----------------------------------");
-                startMenu.saveUsers();
-            }
-
+            mediaList.add(str);
+            savedMovies=mediaList.toArray(savedMovies);
+            startMenu.saveUsers();
         }
         if (b){
             List<String> mediaList;
-            boolean alreadySaved = false;
-            if(!Objects.equals(savedSeries[0], "none")){
+            if(!Objects.equals(savedSeries[0], "null")){
                 mediaList = new ArrayList<String>(Arrays.asList(savedSeries));
             }
             else{
                 mediaList = new ArrayList<String>();
             }
-            for(String saved : savedSeries)
-            {
-                if(saved.equals(str))
-                {
-                    alreadySaved = true;
-                    System.out.println(str+" is already saved");
-                    System.out.println("--------------------------");
-                    break;
-                }
-            }
-            if(!alreadySaved) {
-                mediaList.add(str);
-                savedSeries = mediaList.toArray(savedSeries);
-                System.out.println(str+" is now saved.");
-                System.out.println("------------------------------");
-                startMenu.saveUsers();
-            }
+            mediaList.add(str);
+            savedSeries=mediaList.toArray(savedSeries);
+            startMenu.saveUsers();
         }
     }
-    public void watchedMedia(boolean a2, boolean b2, String str){
-        if(a2){
+    public void watchedMedia(boolean a, boolean b, String str){
+        if(a){
             List<String> mediaList;
-            boolean alreadyWatched = false;
-            if(!Objects.equals(watchedMovies[0], "none")){
+            if(!Objects.equals(watchedMovies[0], "null")){
                 mediaList = new ArrayList<String>(Arrays.asList(watchedMovies));
             }
             else{
                 mediaList = new ArrayList<String>();
             }
-            for(String watched : watchedMovies)
-            {
-                if(watched.equals(str))
-                {
-                    alreadyWatched = true;
-                    break;
-                }
-            }
-            if(!alreadyWatched) {
-                mediaList.add(str);
-                watchedMovies = mediaList.toArray(watchedMovies);
-                startMenu.saveUsers();
-            }
+            mediaList.add(str);
+            watchedMovies=mediaList.toArray(watchedMovies);
+            startMenu.saveUsers();
         }
-        if (b2){
+        if (b){
             List<String> mediaList;
-            boolean alreadyWatched = false;
-            if(!Objects.equals(watchedSeries[0], "none")){
+            if(!Objects.equals(watchedSeries[0], "null")){
                 mediaList = new ArrayList<String>(Arrays.asList(watchedSeries));
             }
             else{
                 mediaList = new ArrayList<String>();
             }
-            for(String watched : watchedSeries)
-            {
-                if(watched.equals(str))
-                {
-                    alreadyWatched = true;
-                    break;
-                }
-            }
-            if(!alreadyWatched) {
-                mediaList.add(str);
-                watchedSeries = mediaList.toArray(watchedSeries);
-                startMenu.saveUsers();
-            }
+            mediaList.add(str);
+            watchedSeries=mediaList.toArray(watchedSeries);
+            startMenu.saveUsers();
         }
     }
 
@@ -188,3 +135,4 @@ public class User {
         return watchedMovieList+watchedSeriesList;
     }
 }
+
