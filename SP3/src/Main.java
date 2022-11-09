@@ -25,12 +25,14 @@ public class Main {
                 signingUp=true;
             }
             else if (intInputMain!=1||intInputMain!=2){
+                mainMenu.spaces();
                 System.out.println("--------------------------------");
                 System.out.println("Please input '1' or '2' instead");
                 loginScreen();
             }
         }
         catch (Exception e){
+            mainMenu.spaces();
             System.out.println("--------------------------------");
             System.out.println("Please input '1' or '2' instead");
             loginScreen();
@@ -45,12 +47,15 @@ public class Main {
             System.out.println("-------------------");
             String inputpassword = keyboardlogin.nextLine();
             if (startmenu.runLogin(inputusername, inputpassword)) {
+                mainMenu.spaces();
                 System.out.println("---------------------");
                 System.out.println("You are now logged in");
                 System.out.println("---------------------");
                 mainMenu.mediaCreate();
                 mainMenu.runMainMenu();
             } else {
+
+                mainMenu.spaces();
                 System.out.println("----------------");
                 System.out.println("Incorrect log-in");
                 System.out.println("----------------");

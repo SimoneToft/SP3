@@ -26,6 +26,8 @@ public class Series {
         List<Series> seriesSearch = new ArrayList<>();
         int number = 1;
         if (search.matches("0")) {
+            mainMenu.spaces();
+            System.out.println("------------------");
             mainMenu.runMainMenu();
 
         } else {
@@ -39,6 +41,7 @@ public class Series {
                 number++;
             }
             if (seriesSearch.size()<=0) {
+                mainMenu.spaces();
                 System.out.println("----------------------------------------------");
                 System.out.println("There are no matching series, please try again");
                 System.out.println("----------------------------------------------");
@@ -52,6 +55,8 @@ public class Series {
         int nextChoice = choice.nextInt();
 
         if (nextChoice == 0) {
+            mainMenu.spaces();
+            System.out.println("------------------");
             mainMenu.runMainMenu();
 
         } else if (nextChoice <= seriesSearch.size()) {
@@ -59,6 +64,7 @@ public class Series {
             mainMenu.mediaPlayer(movieTitle, true, false);
         }
         else if (nextChoice > seriesSearch.size()||nextChoice < seriesSearch.size()){
+            mainMenu.spaces();
 
             System.out.println("-----------------------------------------");
             System.out.println("The series was not found, please try again");

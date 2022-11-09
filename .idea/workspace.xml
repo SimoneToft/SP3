@@ -2,13 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="493de6d9-02b9-48ce-9464-49d97e612729" name="Changes" comment="input error fixes">
-      <change beforePath="$PROJECT_DIR$/out/production/SP3/FileIO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SP3/FileIO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SP3/Data/user.csv" beforeDir="false" afterPath="$PROJECT_DIR$/SP3/Data/user.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SP3/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/SP3/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SP3/src/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/SP3/src/Movie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SP3/src/Series.java" beforeDir="false" afterPath="$PROJECT_DIR$/SP3/src/Series.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SP3/src/mainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/SP3/src/mainMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SP3/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SP3/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SP3/Movie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SP3/Movie.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SP3/Series.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SP3/Series.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SP3/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SP3/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SP3/mainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SP3/mainMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SP3/startMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SP3/startMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SP3/mainMenu.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +54,7 @@
       <workItem from="1667487764885" duration="72000" />
       <workItem from="1667487876736" duration="208000" />
       <workItem from="1667488095281" duration="252000" />
-      <workItem from="1667996490462" duration="1208000" />
+      <workItem from="1667996490462" duration="3417000" />
     </task>
     <task id="LOCAL-00001" summary="input error fixes">
       <created>1667997633138</created>

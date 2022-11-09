@@ -9,6 +9,8 @@ public class mainMenu {
     }
     public static void runMainMenu() {
         Scanner keyboard = new Scanner(System.in);
+        System.out.println("M A I N   M E N U");
+        System.out.println("------------------");
         System.out.println("1. View all movies\n2. View all series\n3. Search\n4. Categories\n5. Watched\n6. Saved");
         System.out.println("------------------");
         int intInputMain;
@@ -59,12 +61,14 @@ public class mainMenu {
 
                         Series.titleSearchSeries(search);
                     } else if (choisees != 1 || choisees != 2) {
+                        mainMenu.spaces();
                         System.out.println("-------------------------------");
                         System.out.println("Please input '1' or '2' instead");
                         System.out.println("-------------------------------");
                         runMainMenu();
                     }
                 } catch (Exception e) {
+                    mainMenu.spaces();
                     System.out.println("-------------------------------");
                     System.out.println("Please input '1' or '2' instead");
                     System.out.println("-------------------------------");
@@ -81,6 +85,8 @@ public class mainMenu {
                 Scanner newkeyboard = new Scanner(System.in);
                 int nextkey = newkeyboard.nextInt();
                 if (nextkey == 0 ||nextkey  != 0) {
+                    mainMenu.spaces();
+                    System.out.println("------------------");
                     runMainMenu();
                 }
             } else if (intInputMain == 6) {
@@ -91,9 +97,12 @@ public class mainMenu {
                 Scanner newkeyboard = new Scanner(System.in);
                 int nextkey = newkeyboard.nextInt();
                 if (nextkey == 0 ||nextkey  != 0) {
+                    mainMenu.spaces();
+                    System.out.println("------------------");
                     runMainMenu();
                 }
             } else if (intInputMain > 6 || intInputMain <= 0) {                 //number-typo
+                mainMenu.spaces();
                 System.out.println("-------------------------");
                 System.out.println("Please type '1-6' instead");
                 System.out.println("-------------------------");
@@ -101,6 +110,7 @@ public class mainMenu {
 
             }
         } catch (Exception e) {
+            mainMenu.spaces();
             System.out.println("-------------------------------------------");  //wrongful input
             System.out.println("Please input a corresponding number instead");
             System.out.println("-------------------------------------------");
@@ -122,6 +132,8 @@ public class mainMenu {
             mediaPlayer(mediaTitle, moviesDisplayed, seriesDisplayed);
         }
         else if(input==0){
+            mainMenu.spaces();
+            System.out.println("------------------");
             runMainMenu();
         }
     }
@@ -131,6 +143,8 @@ public class mainMenu {
         System.out.println("------------------------------------------------------------------------");
         int mediaChoice=keyboard.nextInt();
         if(mediaChoice==0) {
+            mainMenu.spaces();
+            System.out.println("------------------");
             runMainMenu();
         }
         else if(mediaChoice==1){
@@ -140,12 +154,22 @@ public class mainMenu {
             System.out.println("--------------------------------");
             startMenu.getCurrentUser().watchedMedia(moviesDisplayed,seriesDisplayed,mediaTitle);
             if(keyboard.nextInt()==0){
+                mainMenu.spaces();
+                System.out.println("------------------");
                 runMainMenu();
             }
         }
         else if(mediaChoice==2){
+            mainMenu.spaces();
             startMenu.getCurrentUser().saveMedia(moviesDisplayed,seriesDisplayed,mediaTitle);
             runMainMenu();
         }
-    }      
+    }
+    public static void spaces (){
+        int i;
+        for(i = 0 ; i < 50 ;){
+            System.out.println("");
+            i++;
+        }
+    }
 }

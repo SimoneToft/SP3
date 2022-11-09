@@ -33,6 +33,7 @@ public class Movie {
                     number++;
                 }
                 if (movieSearch.size()<=0) {
+                    mainMenu.spaces();
                     System.out.println("----------------------------------------------");
                     System.out.println("There are no matching movies, please try again");
                     System.out.println("----------------------------------------------");
@@ -47,6 +48,8 @@ public class Movie {
                     int nextChoice = choice.nextInt();
 
                     if (nextChoice == 0) {
+                        mainMenu.spaces();
+                        System.out.println("------------------");
                         mainMenu.runMainMenu();
 
                     } else if (nextChoice <= movieSearch.size()) {
@@ -54,6 +57,8 @@ public class Movie {
                         mainMenu.mediaPlayer(movieTitle, true, false);
                     }
                     else if (nextChoice > movieSearch.size()||nextChoice < movieSearch.size()){
+
+                        mainMenu.spaces();
 
                         System.out.println("-----------------------------------------");
                         System.out.println("The movie was not found, please try again");
@@ -64,6 +69,7 @@ public class Movie {
                     }
                 }
                 catch (Exception e){
+                    mainMenu.spaces();
                     System.out.println("------------------------------");
                     System.out.println("Please input a number instead");
                     System.out.println("------------------------------");
@@ -103,6 +109,8 @@ public class Movie {
         ArrayList<Movie> foundMovies = new ArrayList<>();
         int movieNumber = 1;
         if(input==0) {
+            mainMenu.spaces();
+            System.out.println("------------------");
             mainMenu.runMainMenu();
         }
         for(Movie p : createMedia.movies) {
@@ -124,6 +132,8 @@ public class Movie {
             int nextChoice = choice.nextInt();
 
             if (nextChoice == 0) {
+                mainMenu.spaces();
+                System.out.println("------------------");
                 mainMenu.runMainMenu();
 
             } else if (nextChoice <= foundMovies.size()) {
@@ -139,9 +149,11 @@ public class Movie {
             int nextChoice = choice.nextInt();
 
             if (nextChoice == 0) {
+                mainMenu.spaces();
                 categorySearch();
             }
             else if (nextChoice!=0){
+                mainMenu.spaces();
                 categorySearch();
             }
         }
