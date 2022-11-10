@@ -9,7 +9,7 @@ public class Series {
     private String mediaRating;
     private String mediaReleaseYear;
 
-    private String[] seriesSeasons;
+    private static String[] seriesSeasons;
 
     public Series(String mediaTitle, String mediaReleaseYear, String[] mediaCategory, String mediaRating, String[] seriesSeasons) {
         this.mediaCategory = mediaCategory;
@@ -20,6 +20,9 @@ public class Series {
     }
     public String getMediaTitle() {
         return mediaTitle;
+    }
+    public static String[] getSeriesSeasons() {
+        return seriesSeasons;
     }
 
     public static void titleSearchSeries(String search) {

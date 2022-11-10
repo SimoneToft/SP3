@@ -129,6 +129,9 @@ public class mainMenu {
             System.out.println("------------------------------------------------------------------------");
             System.out.println("You have selected '"+mediaTitle+"'");
             System.out.println("------------------------------------------------------------------------");
+            if(seriesDisplayed) {
+                createMedia.seasonList(choice);
+            }
             mediaPlayer(mediaTitle, moviesDisplayed, seriesDisplayed);
         }
         else if(input==0){
