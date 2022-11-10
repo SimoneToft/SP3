@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="493de6d9-02b9-48ce-9464-49d97e612729" name="Changes" comment="input error fixes">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SP3/Data/user.csv" beforeDir="false" afterPath="$PROJECT_DIR$/SP3/Data/user.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SP3/src/Series.java" beforeDir="false" afterPath="$PROJECT_DIR$/SP3/src/Series.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SP3/src/createMedia.java" beforeDir="false" afterPath="$PROJECT_DIR$/SP3/src/createMedia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SP3/src/mainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/SP3/src/mainMenu.java" afterDir="false" />
+    <list default="true" id="493de6d9-02b9-48ce-9464-49d97e612729" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/out/production/SP3/Series.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SP3/Series.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SP3/mainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SP3/mainMenu.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

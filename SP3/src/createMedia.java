@@ -94,6 +94,13 @@ public class createMedia {
             System.out.println("You have selected season "+seasonChoice);
             episodeChoice(seasonChoice, episodeList);
         }
+        else {
+            mainMenu.spaces();
+            System.out.println("-------------------------------------------");  //wrongful input
+            System.out.println("Please input a corresponding number instead");
+            System.out.println("-------------------------------------------");
+            mainMenu.runMainMenu();
+        }
     }
     public static void episodeChoice(int seasonChoice, ArrayList<String>episodeList) {
         Scanner keyboard = new Scanner(System.in);
@@ -110,8 +117,15 @@ public class createMedia {
             System.out.println("------------------");
             mainMenu.runMainMenu();
         }
-        else if(episodeChoice>0&&episodeChoice-1<=Integer.parseInt(episodeList.get(seasonChoice-1))) {
+        else if(episodeChoice>0&&episodeChoice<=Integer.parseInt(episodeList.get(seasonChoice-1))) {
             System.out.println("You have selected episode "+episodeChoice);
+        }
+        else {
+            mainMenu.spaces();
+            System.out.println("-------------------------------------------");  //wrongful input
+            System.out.println("Please input a corresponding number instead");
+            System.out.println("-------------------------------------------");
+            mainMenu.runMainMenu();
         }
     }
 }

@@ -3,17 +3,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-public class Movie {
-    private String mediaTitle;
-    private String[] mediaCategory;
-    private String mediaRating;
-    private String mediaReleaseYear;
+public class Movie extends aMedia {
 
     public Movie(String mediaTitle, String mediaReleaseYear, String[] mediaCategory, String mediaRating) {
-        this.mediaCategory = mediaCategory;
-        this.mediaTitle = mediaTitle;
-        this.mediaRating = mediaRating;
-        this.mediaReleaseYear = mediaReleaseYear;
+        super(mediaTitle,mediaReleaseYear,mediaCategory,mediaRating);
     }
 
        public static void titleSearch(String search) {
