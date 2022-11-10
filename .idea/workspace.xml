@@ -1,28 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="493de6d9-02b9-48ce-9464-49d97e612729" name="Changes" comment="input error fixes">
-      <change afterPath="$PROJECT_DIR$/SP3/src/aMedia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SP3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SP3.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SP3/Data/user.csv" beforeDir="false" afterPath="$PROJECT_DIR$/SP3/Data/user.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SP3/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/SP3/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SP3/src/Media.java" beforeDir="false" afterPath="$PROJECT_DIR$/SP3/src/Media.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SP3/src/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/SP3/src/Movie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SP3/src/Series.java" beforeDir="false" afterPath="$PROJECT_DIR$/SP3/src/Series.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SP3/src/createMedia.java" beforeDir="false" afterPath="$PROJECT_DIR$/SP3/src/createMedia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SP3/src/mainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/SP3/src/mainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SP3/Media.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SP3/Media.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SP3/Movie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SP3/Movie.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SP3/Series.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SP3/Series.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SP3/createMedia.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SP3/createMedia.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SP3/mainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SP3/mainMenu.class" afterDir="false" />
-    </list>
+    <list default="true" id="493de6d9-02b9-48ce-9464-49d97e612729" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
