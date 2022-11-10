@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="493de6d9-02b9-48ce-9464-49d97e612729" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/out/production/SP3/Series.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SP3/Series.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SP3/mainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SP3/mainMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SP3/src/createMedia.java" beforeDir="false" afterPath="$PROJECT_DIR$/SP3/src/createMedia.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
