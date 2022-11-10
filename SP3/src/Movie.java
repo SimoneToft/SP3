@@ -3,30 +3,35 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-public class Movie extends aMedia {
+public class Movie {
+    private String mediaTitle;
+    private String[] mediaCategory;
+    private String mediaRating;
+    private String mediaReleaseYear;
 
     public Movie(String mediaTitle, String mediaReleaseYear, String[] mediaCategory, String mediaRating) {
-        super(mediaTitle, mediaReleaseYear, mediaCategory, mediaRating);
+        this.mediaCategory = mediaCategory;
+        this.mediaTitle = mediaTitle;
+        this.mediaRating = mediaRating;
+        this.mediaReleaseYear = mediaReleaseYear;
     }
 
        public static void titleSearch(String search) {
             List<Movie> movieSearch = new ArrayList<>();
             int number = 1;
             if (search.matches("0")) {
-                mainMenu.spaces();
-                System.out.println("------------------");
                 mainMenu.runMainMenu();
 
             } else {
                 for (Movie p : createMedia.movies) {
                     if (p.mediaTitle.toLowerCase().contains(search.toLowerCase())) {
-                        movieSearch.add(p); //adds corresponding movies to array, if it matches search input
+                        movieSearch.add(p);
                     }
-                }               //prints list of movies
+                }
                 for (Movie p : movieSearch) {
                     System.out.println(number + ". " + p);
                     number++;
-                }               // if no movies are added to array (search doesn't match)
+                }
                 if (movieSearch.size()<=0) {
                     mainMenu.spaces();
                     System.out.println("----------------------------------------------");
@@ -41,7 +46,7 @@ public class Movie extends aMedia {
                 Scanner choice = new Scanner(System.in);
                 try {
                     int nextChoice = choice.nextInt();
-                                           //returns to main menu
+
                     if (nextChoice == 0) {
                         mainMenu.spaces();
                         System.out.println("------------------");
@@ -63,7 +68,7 @@ public class Movie extends aMedia {
 
                     }
                 }
-                catch (Exception e){            //catch if input is not a number
+                catch (Exception e){
                     mainMenu.spaces();
                     System.out.println("------------------------------");
                     System.out.println("Please input a number instead");
@@ -72,6 +77,7 @@ public class Movie extends aMedia {
                 }
             }
     public static void movieCategorySearch() {
+
 
         {
             System.out.println("------------------------");
@@ -110,7 +116,7 @@ public class Movie extends aMedia {
             int choiceNumber = -1 + input;
             ArrayList<Movie> foundMovies = new ArrayList<>();
             int movieNumber = 1;
-            if (input == 0) {           //return to main menu
+            if (input == 0) {
                 mainMenu.spaces();
                 System.out.println("------------------");
                 mainMenu.runMainMenu();
@@ -135,7 +141,7 @@ public class Movie extends aMedia {
                 Scanner choice = new Scanner(System.in);
                 int nextChoice = choice.nextInt();
 
-                if (nextChoice == 0) {      //return to main menu
+                if (nextChoice == 0) {
                     mainMenu.spaces();
                     System.out.println("------------------");
                     mainMenu.runMainMenu();
@@ -147,7 +153,7 @@ public class Movie extends aMedia {
                     mainMenu.mediaPlayer(movieTitle, true, false);
 
                 }
-            } else {                        //If there are no matching movies
+            } else {
                 System.out.println("---------------------------------------------------------");
                 System.out.println("No movies were found in that category, type '0' to return");
                 System.out.println("---------------------------------------------------------");
