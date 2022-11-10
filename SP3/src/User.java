@@ -1,7 +1,8 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
+
+import javax.swing.*;
+import java.io.File;
+import java.io.IOException;
+import java.util.*;
 
 public class User {
     private String username;
@@ -125,6 +126,14 @@ public class User {
         }
     }
 
+    public void setSavedMovies(String[] savedMovies) {
+        this.savedMovies = savedMovies;
+    }
+
+    public void setSavedSeries(String[] savedSeries) {
+        this.savedSeries = savedSeries;
+    }
+
     public String getUsername() {
         return username;
     }
@@ -187,4 +196,134 @@ public class User {
 
         return watchedMovieList+watchedSeriesList;
     }
+    public void deleteMedia()                   //Function to delete saved media titles both movie and series
+    {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("--------------------------------------------------------------");
+        System.out.println("Do you want to delete a movie or series from your saved media?");
+        System.out.println("1. Movie");
+        System.out.println("2. Series");
+        System.out.println("---------------------------------------------------------------");
+        String userInput = scanner.nextLine();
+        if(userInput.equals("1"))                                   //Execution if user wants to delete movie
+        {
+            System.out.println("------------------------------------");         //reprint saved movies with a line above
+            System.out.println("|SAVED MOVIES|");
+            int i = 1;
+            for(String s : savedMovies)
+            {
+                System.out.println(i + ". " + s);
+                i++;
+            }
+            System.out.println("------------------------------------");             //let user choose what specific movie to delete
+            System.out.println("Choose what movie you want to delete");
+            System.out.println("------------------------------------");
+            int userInt = scanner.nextInt() -1;
+            System.out.println("Are you sure you want to delete " + savedMovies[userInt] + " permanently from your saved media list?");
+            System.out.println("1. Yes");
+            System.out.println("2. No");
+            int userInt2 = scanner.nextInt();
+            if(userInt2 == 1) {
+                File user = new File("SP3/Data/user.csv");
+                try {
+                    String toBePrinted = savedMovies[userInt] + " has been removed from your saved media list";             //saving movie title before it is deleted
+                    Scanner fileScanner = new Scanner(user);
+                    while (fileScanner.hasNextLine()) {             //delete movie from file
+                        String userLine = fileScanner.nextLine();
+
+                        if (userLine.contains(getUsername() + ";" + getPassword())) {
+                            FileIO fileIO = new FileIO();
+                            fileIO.removeFromFile(savedMovies[userInt]);
+                            break;
+                        }
+                    }
+                    setSavedMovies(removePart(savedMovies, userInt));               //delete movie from array, print new list
+                    System.out.println(toBePrinted);
+                    System.out.println("-------------------------------------------------------------------");
+                    System.out.println("|SAVED MOVIES|");
+                    for (int n = 0; n < savedMovies.length; n++) {
+                        System.out.println(savedMovies[n]);
+                    }
+                    System.out.println("-------------------------------------------------------------------");
+                } catch (IOException e) {
+                    System.out.println("File not found");
+                }
+
+            }
+            else
+            {
+                mainMenu.spaces();
+                mainMenu.runMainMenu();
+            }
+        }
+        if(userInput.equals("2"))                           //Execution if user wants to delete movie
+        {
+            System.out.println("------------------------------------");
+            System.out.println("|SAVED SERIES");
+            int i = 1;
+            for(String s : savedSeries)
+            {
+                System.out.println(i + ". " + s);
+                i++;
+            }
+            System.out.println("------------------------------------");             //let user choose what series to delete
+            System.out.println("Choose what series you want to delete");
+            System.out.println("------------------------------------");
+            int userInt = scanner.nextInt() -1;
+            System.out.println("Are you sure you want to delete " + savedSeries[userInt] + " permanently from your saved media list?");
+            System.out.println("1. Yes");
+            System.out.println("2. No");
+            int userInt2 = scanner.nextInt();
+            if(userInt2 == 1) {                                   //Deleting the series
+                File user = new File("SP3/Data/user.csv");
+                try {
+                    String toBePrinted = savedSeries[userInt] + " has been removed from your saved media list";  //Saving media title for later
+                    Scanner fileScanner = new Scanner(user);
+                    while (fileScanner.hasNextLine()) {                                         //deleting series from file
+                        String userLine = fileScanner.nextLine();
+                        if (userLine.contains(getUsername() + ";" + getPassword())) {
+                            FileIO fileIO = new FileIO();
+                            fileIO.removeFromFile(savedSeries[userInt]);
+                            break;
+                        }
+                    }
+                    setSavedSeries(removePart(savedSeries, userInt));               //deleting series from array and printing new list
+                    System.out.println(toBePrinted);
+                    System.out.println("-------------------------------------------------------------------");
+                    System.out.println("|SAVED SERIES|");
+                    for (int b = 0; b < savedSeries.length; b++) {
+                        System.out.println(savedSeries[b]);
+                    }
+                    System.out.println("-------------------------------------------------------------------");
+                } catch (IOException e) {
+                    System.out.println("File not found");
+                }
+
+            }
+            else
+            {
+                mainMenu.spaces();
+                mainMenu.runMainMenu();
+            }
+        }
+    }
+    public String[] removePart(String[] array, int index)               //function to delete a part of an array
+    {
+        String [] newString = new String[array.length - 1];
+        if (array == null || index < 0
+                || index >= array.length) {
+
+            return array;
+        }
+        for(int i = 0, k = 0; i < array.length; i++)
+        {
+            if(i == index)
+            {
+                continue;
+            }
+            newString[k++] = array[i];
+        }
+        return newString;
+    }
+
 }

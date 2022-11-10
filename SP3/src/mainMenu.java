@@ -91,16 +91,22 @@ public class mainMenu {
                 }
             } else if (intInputMain == 6) {
                 System.out.println(startMenu.getCurrentUser().getSaved());      //prints saved movies for user
-                System.out.println("--------------------------------");
-                System.out.println("Press '0' to return to main menu");
-                System.out.println("--------------------------------");
+                System.out.println("---------------------------------------------------------------------------------");
+                System.out.println("Press '0' to return to main menu | Press '1' to delete media from your saved file");
+                System.out.println("---------------------------------------------------------------------------------");
                 Scanner newkeyboard = new Scanner(System.in);
                 int nextkey = newkeyboard.nextInt();
-                if (nextkey == 0 ||nextkey  != 0) {
+                if (nextkey == 0 ||nextkey  != 1) {
                     mainMenu.spaces();
                     System.out.println("------------------");
                     runMainMenu();
                 }
+                    else if(nextkey == 1) {
+
+                    startMenu.getCurrentUser().deleteMedia();
+                    runMainMenu();
+                }
+
             } else if (intInputMain > 6 || intInputMain <= 0) {                 //number-typo
                 mainMenu.spaces();
                 System.out.println("-------------------------");
