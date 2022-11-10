@@ -3,23 +3,19 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-public class Series {
-    private String mediaTitle;
-    private String[] mediaCategory;
-    private String mediaRating;
-    private String mediaReleaseYear;
+public class Series extends aMedia {
 
-    private String[] seriesSeasons;
+    private static String[] seriesSeasons;
 
     public Series(String mediaTitle, String mediaReleaseYear, String[] mediaCategory, String mediaRating, String[] seriesSeasons) {
-        this.mediaCategory = mediaCategory;
-        this.mediaTitle = mediaTitle;
-        this.mediaRating = mediaRating;
-        this.mediaReleaseYear = mediaReleaseYear;
+        super(mediaTitle, mediaReleaseYear, mediaCategory, mediaRating);
         this.seriesSeasons = seriesSeasons;
     }
     public String getMediaTitle() {
         return mediaTitle;
+    }
+    public static String[] getSeriesSeasons() {
+        return seriesSeasons;
     }
 
     public static void titleSearchSeries(String search) {
@@ -28,20 +24,20 @@ public class Series {
         if (search.matches("0")) {
             mainMenu.spaces();
             System.out.println("------------------");
-            mainMenu.runMainMenu();
+            mainMenu.runMainMenu();         //returns to main menu
 
         } else {
             for (Series p : createMedia.series) {
                 if (p.getMediaTitle().toLowerCase().contains(search.toLowerCase())) {
-                    seriesSearch.add(p);
+                    seriesSearch.add(p);        //adds corresponding series to array, if it matches search input
                 }
             }
             for (Series p : seriesSearch) {
                 System.out.println(number + ". " + p);
                 number++;
-            }
+            }                               //if seriesSearch is empty
             if (seriesSearch.size()<=0) {
-                mainMenu.spaces();
+                mainMenu.spaces();         // if no series are added to array (search doesn't match)
                 System.out.println("----------------------------------------------");
                 System.out.println("There are no matching series, please try again");
                 System.out.println("----------------------------------------------");
@@ -57,7 +53,7 @@ public class Series {
         if (nextChoice == 0) {
             mainMenu.spaces();
             System.out.println("------------------");
-            mainMenu.runMainMenu();
+            mainMenu.runMainMenu();         //returns to main menu
 
         } else if (nextChoice <= seriesSearch.size()) {
             String movieTitle = seriesSearch.get(nextChoice - 1).getMediaTitle();
@@ -124,6 +120,8 @@ public class Series {
         ArrayList<Series> foundSeries = new ArrayList<>();
         int seriesNumber = 1;
         if (input == 0) {
+            mainMenu.spaces();
+            System.out.println("------------------");
             mainMenu.runMainMenu();
         }
 
@@ -147,6 +145,8 @@ public class Series {
             int nextChoice = choice.nextInt();
 
             if (nextChoice == 0) {
+                mainMenu.spaces();
+                System.out.println("------------------");
                 mainMenu.runMainMenu();
 
             } else if (nextChoice <= foundSeries.size()) {
@@ -164,7 +164,7 @@ public class Series {
 
             if (nextChoice == 0) {
                 seriesCategorySearch();
-            } else if (nextChoice != 0) {
+            } else if (nextChoice != 0) {  //anti-brat measure
                 seriesCategorySearch();
             }
         }

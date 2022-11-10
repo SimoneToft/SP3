@@ -28,14 +28,14 @@ public class Main {
                 mainMenu.spaces();
                 System.out.println("--------------------------------");
                 System.out.println("Please input '1' or '2' instead");
-                loginScreen();
+                loginScreen();          //returns to login, if number is wrong
             }
         }
         catch (Exception e){
             mainMenu.spaces();
             System.out.println("--------------------------------");
             System.out.println("Please input '1' or '2' instead");
-            loginScreen();
+            loginScreen();             //returns to login, if input is wrong
         }
         while(loggingIn==true){
             System.out.println("-------------------");

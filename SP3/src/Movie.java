@@ -3,35 +3,30 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-public class Movie {
-    private String mediaTitle;
-    private String[] mediaCategory;
-    private String mediaRating;
-    private String mediaReleaseYear;
+public class Movie extends aMedia {
 
     public Movie(String mediaTitle, String mediaReleaseYear, String[] mediaCategory, String mediaRating) {
-        this.mediaCategory = mediaCategory;
-        this.mediaTitle = mediaTitle;
-        this.mediaRating = mediaRating;
-        this.mediaReleaseYear = mediaReleaseYear;
+        super(mediaTitle, mediaReleaseYear, mediaCategory, mediaRating);
     }
 
        public static void titleSearch(String search) {
             List<Movie> movieSearch = new ArrayList<>();
             int number = 1;
             if (search.matches("0")) {
+                mainMenu.spaces();
+                System.out.println("------------------");
                 mainMenu.runMainMenu();
 
             } else {
                 for (Movie p : createMedia.movies) {
                     if (p.mediaTitle.toLowerCase().contains(search.toLowerCase())) {
-                        movieSearch.add(p);
+                        movieSearch.add(p); //adds corresponding movies to array, if it matches search input
                     }
-                }
+                }               //prints list of movies
                 for (Movie p : movieSearch) {
                     System.out.println(number + ". " + p);
                     number++;
-                }
+                }               // if no movies are added to array (search doesn't match)
                 if (movieSearch.size()<=0) {
                     mainMenu.spaces();
                     System.out.println("----------------------------------------------");
@@ -46,7 +41,7 @@ public class Movie {
                 Scanner choice = new Scanner(System.in);
                 try {
                     int nextChoice = choice.nextInt();
-
+                                           //returns to main menu
                     if (nextChoice == 0) {
                         mainMenu.spaces();
                         System.out.println("------------------");
@@ -68,7 +63,7 @@ public class Movie {
 
                     }
                 }
-                catch (Exception e){
+                catch (Exception e){            //catch if input is not a number
                     mainMenu.spaces();
                     System.out.println("------------------------------");
                     System.out.println("Please input a number instead");
@@ -77,7 +72,6 @@ public class Movie {
                 }
             }
     public static void movieCategorySearch() {
-
 
         {
             System.out.println("------------------------");
@@ -97,15 +91,16 @@ public class Movie {
                     "11. Film-Noir\n" +
                     "12. History\n" +
                     "13. Horror\n" +
-                    "14. Musical\n" +
-                    "15. Mystery\n" +
-                    "16. Romance\n" +
-                    "17. Sci-fi\n" +
-                    "18. Sport\n" +
-                    "19. Talk-show\n" +
-                    "20. Thriller\n" +
-                    "21. War\n" +
-                    "22. Western");
+                    "14. Music\n" +
+                    "15. Musical\n" +
+                    "16. Mystery\n" +
+                    "17. Romance\n" +
+                    "18. Sci-fi\n" +
+                    "19. Sport\n" +
+                    "20. Talk-show\n" +
+                    "21. Thriller\n" +
+                    "22. War\n" +
+                    "23. Western");
             System.out.println("-----------------------------------------------------");
             System.out.println("Select a category or press '0' to return to main menu");
             System.out.println("-----------------------------------------------------");
@@ -115,7 +110,9 @@ public class Movie {
             int choiceNumber = -1 + input;
             ArrayList<Movie> foundMovies = new ArrayList<>();
             int movieNumber = 1;
-            if (input == 0) {
+            if (input == 0) {           //return to main menu
+                mainMenu.spaces();
+                System.out.println("------------------");
                 mainMenu.runMainMenu();
             }
 
@@ -138,7 +135,9 @@ public class Movie {
                 Scanner choice = new Scanner(System.in);
                 int nextChoice = choice.nextInt();
 
-                if (nextChoice == 0) {
+                if (nextChoice == 0) {      //return to main menu
+                    mainMenu.spaces();
+                    System.out.println("------------------");
                     mainMenu.runMainMenu();
 
                 } else if (nextChoice <= foundMovies.size()) {
@@ -148,7 +147,7 @@ public class Movie {
                     mainMenu.mediaPlayer(movieTitle, true, false);
 
                 }
-            } else {
+            } else {                        //If there are no matching movies
                 System.out.println("---------------------------------------------------------");
                 System.out.println("No movies were found in that category, type '0' to return");
                 System.out.println("---------------------------------------------------------");

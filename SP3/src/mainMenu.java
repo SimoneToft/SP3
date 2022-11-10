@@ -20,14 +20,14 @@ public class mainMenu {
 
             if (intInputMain == 1) {
                 mediaAmount = createMedia.allMovies();
-                moviesDisplayed = true;
+                moviesDisplayed = true;                         //prints list of all movies
                 System.out.println("--------------------------------------------------");
                 System.out.println("Select a movie or press '0' to return to main menu");
                 System.out.println("--------------------------------------------------");
                 mediaSelector();
             } else if (intInputMain == 2) {
                 mediaAmount = createMedia.allSeries();
-                seriesDisplayed = true;
+                seriesDisplayed = true;                         //prints list of all series
                 System.out.println("---------------------------------------------------");
                 System.out.println("Select a series or press '0' to return to main menu");
                 System.out.println("---------------------------------------------------");
@@ -60,7 +60,7 @@ public class mainMenu {
                         String search = searcher.nextLine();
 
                         Series.titleSearchSeries(search);
-                    } else if (choisees != 1 || choisees != 2) {
+                    } else if (choisees != 1 || choisees != 2) {                //catches wrong number input
                         mainMenu.spaces();
                         System.out.println("-------------------------------");
                         System.out.println("Please input '1' or '2' instead");
@@ -68,7 +68,7 @@ public class mainMenu {
                         runMainMenu();
                     }
                 } catch (Exception e) {
-                    mainMenu.spaces();
+                    mainMenu.spaces();                                          //catches wrong input
                     System.out.println("-------------------------------");
                     System.out.println("Please input '1' or '2' instead");
                     System.out.println("-------------------------------");
@@ -78,7 +78,7 @@ public class mainMenu {
             } else if (intInputMain == 4) {
                 categorySearch();
             } else if (intInputMain == 5) {
-                System.out.println(startMenu.getCurrentUser().getWatched());
+                System.out.println(startMenu.getCurrentUser().getWatched());   //prints watched movies for user
                 System.out.println("--------------------------------");
                 System.out.println("Press '0' to return to main menu");
                 System.out.println("--------------------------------");
@@ -90,7 +90,7 @@ public class mainMenu {
                     runMainMenu();
                 }
             } else if (intInputMain == 6) {
-                System.out.println(startMenu.getCurrentUser().getSaved());
+                System.out.println(startMenu.getCurrentUser().getSaved());      //prints saved movies for user
                 System.out.println("--------------------------------");
                 System.out.println("Press '0' to return to main menu");
                 System.out.println("--------------------------------");
@@ -129,6 +129,9 @@ public class mainMenu {
             System.out.println("------------------------------------------------------------------------");
             System.out.println("You have selected '"+mediaTitle+"'");
             System.out.println("------------------------------------------------------------------------");
+            if(seriesDisplayed) {
+                createMedia.seasonList(choice);
+            }
             mediaPlayer(mediaTitle, moviesDisplayed, seriesDisplayed);
         }
         else if(input==0){
@@ -137,7 +140,9 @@ public class mainMenu {
             runMainMenu();
         }
         mainMenu.spaces();
-        System.out.println("------------------");
+        System.out.println("-------------------------------------------");  //wrongful input
+        System.out.println("Please input a corresponding number instead");
+        System.out.println("-------------------------------------------");
         runMainMenu();
     }
     public static void mediaPlayer(String mediaTitle, boolean moviesDisplayed, boolean seriesDisplayed){
@@ -194,8 +199,11 @@ public class mainMenu {
         }
         else
         {
-            System.out.println("you dumb fuck you had two choices and you failed");
-            mainMenu.runMainMenu();
+            mainMenu.spaces();
+            System.out.println("-------------------------");
+            System.out.println("Please type '1-2' instead");
+            System.out.println("-------------------------");
+            runMainMenu();
         }
     }
 }

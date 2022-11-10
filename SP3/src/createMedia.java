@@ -1,4 +1,7 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class createMedia {
     static FileIO fileIO = new FileIO();
@@ -53,5 +56,76 @@ public class createMedia {
             i++;
         }
         return i-1;
+    }
+    public static void seasonList(int choice) {
+        ArrayList<String> seasonList = new ArrayList<>();
+        ArrayList<String> episodeList = new ArrayList<>();
+        Series p = series.get(choice);
+        for (String s : p.getSeriesSeasons()) {
+            String[] seasons = s.replaceAll(",","-").replaceAll(" ", "").split("-");
+            for(int i = 0; i<seasons.length; i++) {
+                if(i%2!=0) {
+                    episodeList.add(seasons[i]);
+                }
+                else if(i%2==0) {
+                    seasonList.add(seasons[i]);
+                }
+            }
+        }
+        seasonChoice(seasonList, episodeList);
+    }
+
+    public static void seasonChoice(ArrayList<String>seasonList, ArrayList<String>episodeList) {
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("--------------------------------");
+        System.out.println("Press '0' to return to main menu");
+        System.out.println("Or select a season from the list");
+        System.out.println("--------------------------------");
+        for(String k: seasonList) {
+            System.out.println("Season: "+k);
+        }
+        int seasonChoice=keyboard.nextInt();
+        if(seasonChoice==0) {
+            mainMenu.spaces();
+            System.out.println("------------------");
+            mainMenu.runMainMenu();
+        }
+        else if(seasonChoice>0&&seasonChoice<=seasonList.size()) {
+            System.out.println("You have selected season "+seasonChoice);
+            episodeChoice(seasonChoice, episodeList);
+        }
+        else {
+            mainMenu.spaces();
+            System.out.println("-------------------------------------------");  //wrongful input
+            System.out.println("Please input a corresponding number instead");
+            System.out.println("-------------------------------------------");
+            mainMenu.runMainMenu();
+        }
+    }
+    public static void episodeChoice(int seasonChoice, ArrayList<String>episodeList) {
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("--------------------------------");
+        System.out.println("Press '0' to return to main menu");
+        System.out.println("Or select a episode from the list");
+        System.out.println("--------------------------------");
+        for(int i=1; i<=Integer.parseInt(episodeList.get(seasonChoice-1));i++) {
+            System.out.println("Episode: "+i);
+        }
+        int episodeChoice=keyboard.nextInt();
+        if(episodeChoice==0) {
+            mainMenu.spaces();
+            System.out.println("------------------");
+            mainMenu.runMainMenu();
+        }
+        else if(episodeChoice>0&&episodeChoice<=Integer.parseInt(episodeList.get(seasonChoice-1))) {
+            System.out.println("You have selected episode "+episodeChoice);
+        }
+        else {
+            mainMenu.spaces();
+            System.out.println("-------------------------------------------");  //wrongful input
+            System.out.println("Please input a corresponding number instead");
+            System.out.println("-------------------------------------------");
+            mainMenu.runMainMenu();
+        }
     }
 }
