@@ -1,4 +1,4 @@
-userName, userPassword, savedMovies, savedSeries, watchedMovies, watchedSeries
-1;1;The Silence Of The Lambs;Girls;Gone With The Wind,Gone With The Wind,Sunset Boulevard,Gone With The Wind,Lawrence Of Arabia,Yankee Doodle Dandy,Raging Bull,The Godfather,Amadeus;Yankee Doodle Dandy,The Honeymooners
-johanselademad;leagueoflegends;null;null;Good Will Hunting,Good Will Hunting,The Wizard Of Oz;null
-Per;rep;null;null;Raging Bull;null,Dexter,The Civil War
+userName userPassword savedMovies savedSeries watchedMovies watchedSeries
+1;1;;;Gone With The WindGone With The WindSunset BoulevardGone With The WindLawrence Of ArabiaYankee Doodle DandyRaging BullThe GodfatherAmadeus;Yankee Doodle DandyThe HoneymoonersGame Of Thrones
+johanselademad;leagueoflegends;null;null;Good Will HuntingGood Will HuntingThe Wizard Of Oz;null
+Per;rep;null;null;Raging Bull;nullDexterThe Civil War

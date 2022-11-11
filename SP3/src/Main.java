@@ -53,6 +53,7 @@ public class Main {
                 System.out.println("---------------------");
                 mainMenu.mediaCreate();
                 mainMenu.runMainMenu();
+
             } else {
 
                 mainMenu.spaces();

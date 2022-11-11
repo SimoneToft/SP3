@@ -246,13 +246,18 @@ public class User {
                     }
                     System.out.println("-------------------------------------------------------------------");
                 } catch (IOException e) {
+                    mainMenu.spaces();
                     System.out.println("File not found");
+                    System.out.println("------------------");
+                    mainMenu.runMainMenu();
+
                 }
 
             }
             else
             {
                 mainMenu.spaces();
+                System.out.println("------------------");
                 mainMenu.runMainMenu();
             }
         }
@@ -303,6 +308,7 @@ public class User {
             else
             {
                 mainMenu.spaces();
+                System.out.println("------------------");
                 mainMenu.runMainMenu();
             }
         }
