@@ -153,6 +153,14 @@ public class Series extends aMedia {
                 String seriesTitle = foundSeries.get(nextChoice - 1).getMediaTitle();
                 System.out.println("-------------------------------");
                 System.out.println("You have selected "+ seriesTitle);
+                int e=0;
+                for(Series s : createMedia.series){
+                    e++;
+                    if(s.getMediaTitle().equals(seriesTitle)){
+                        System.out.println(e);
+                        createMedia.seasonList(e);
+                    }
+                }
                 mainMenu.mediaPlayer(seriesTitle, false, true);
             }
         } else {
