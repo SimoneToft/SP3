@@ -1,7 +1,3 @@
-
-import javax.swing.*;
-import java.io.File;
-import java.io.IOException;
 import java.util.*;
 
 public class User {
@@ -12,113 +8,103 @@ public class User {
     private String[] watchedMovies;
     private String[] watchedSeries;
 
-    public User(String username, String password, String[] savedMovies, String[] savedSeries, String[] watchedMovies, String[] watchedSeries){
-        this.username=username;
-        this.password=password;
-        this.savedMovies=savedMovies;
-        this.savedSeries=savedSeries;
-        this.watchedMovies=watchedMovies;
-        this.watchedSeries=watchedSeries;
+    public User(String username, String password, String[] savedMovies, String[] savedSeries, String[] watchedMovies, String[] watchedSeries) {
+        this.username = username;
+        this.password = password;
+        this.savedMovies = savedMovies;
+        this.savedSeries = savedSeries;
+        this.watchedMovies = watchedMovies;
+        this.watchedSeries = watchedSeries;
     }
-    public void saveMedia(boolean a, boolean b, String str){
-        if(a){
+
+    public void saveMedia(boolean a, boolean b, String str) {
+        if (a) {
             List<String> saveMovieList;
             boolean alreadySaved = false;
-            if(!Objects.equals(savedMovies[0], "none")){
+            if (!Objects.equals(savedMovies[0], "none")) {
                 saveMovieList = new ArrayList<String>(Arrays.asList(savedMovies));
-            }
-            else{
+            } else {
                 saveMovieList = new ArrayList<String>();
             }
-            for(String saved : savedMovies)
-            {
-                if(saved.contains(str))
-                {
+            for (String saved : savedMovies) {
+                if (saved.contains(str)) {
                     alreadySaved = true;
-                    System.out.println(str+" is already saved");
+                    System.out.println(str + " is already saved");
                     System.out.println("-------------------------------");
                     break;
                 }
             }
-            if(!alreadySaved) {
+            if (!alreadySaved) {
                 saveMovieList.add(str);
                 savedMovies = saveMovieList.toArray(savedMovies);
-                System.out.println(str+" is now saved.");
+                System.out.println(str + " is now saved.");
                 System.out.println("-----------------------------------");
                 startMenu.saveUsers();
             }
 
         }
-        if (b){
+        if (b) {
             List<String> mediaList;
             boolean alreadySaved = false;
-            if(!Objects.equals(savedSeries[0], "none")){
+            if (!Objects.equals(savedSeries[0], "none")) {
                 mediaList = new ArrayList<String>(Arrays.asList(savedSeries));
-            }
-            else{
+            } else {
                 mediaList = new ArrayList<String>();
             }
-            for(String saved : savedSeries)
-            {
-                if(saved.equals(str))
-                {
+            for (String saved : savedSeries) {
+                if (saved.equals(str)) {
                     alreadySaved = true;
-                    System.out.println(str+" is already saved");
+                    System.out.println(str + " is already saved");
                     System.out.println("--------------------------");
                     break;
                 }
             }
-            if(!alreadySaved) {
+            if (!alreadySaved) {
                 mediaList.add(str);
                 savedSeries = mediaList.toArray(savedSeries);
-                System.out.println(str+" is now saved.");
+                System.out.println(str + " is now saved.");
                 System.out.println("------------------------------");
                 startMenu.saveUsers();
             }
         }
     }
-    public void watchedMedia(boolean a2, boolean b2, String str){
-        if(a2){
+
+    public void watchedMedia(boolean a2, boolean b2, String str) {
+        if (a2) {
             List<String> mediaList;
             boolean alreadyWatched = false;
-            if(!Objects.equals(watchedMovies[0], "none")){
+            if (!Objects.equals(watchedMovies[0], "none")) {
                 mediaList = new ArrayList<String>(Arrays.asList(watchedMovies));
-            }
-            else{
+            } else {
                 mediaList = new ArrayList<String>();
             }
-            for(String watched : watchedMovies)
-            {
-                if(watched.equals(str))
-                {
+            for (String watched : watchedMovies) {
+                if (watched.equals(str)) {
                     alreadyWatched = true;
                     break;
                 }
             }
-            if(!alreadyWatched) {
+            if (!alreadyWatched) {
                 mediaList.add(str);
                 watchedMovies = mediaList.toArray(watchedMovies);
                 startMenu.saveUsers();
             }
         }
-        if (b2){
+        if (b2) {
             List<String> mediaList;
             boolean alreadyWatched = false;
-            if(!Objects.equals(watchedSeries[0], "none")){
+            if (!Objects.equals(watchedSeries[0], "none")) {
                 mediaList = new ArrayList<String>(Arrays.asList(watchedSeries));
-            }
-            else{
+            } else {
                 mediaList = new ArrayList<String>();
             }
-            for(String watched : watchedSeries)
-            {
-                if(watched.equals(str))
-                {
+            for (String watched : watchedSeries) {
+                if (watched.equals(str)) {
                     alreadyWatched = true;
                     break;
                 }
             }
-            if(!alreadyWatched) {
+            if (!alreadyWatched) {
                 mediaList.add(str);
                 watchedSeries = mediaList.toArray(watchedSeries);
                 startMenu.saveUsers();
@@ -159,43 +145,43 @@ public class User {
     }
 
     public String getSaved() {
-        String savedMovieList= "|SAVED MOVIES|\n";
-        String savedSeriesList= "|SAVED SERIES|\n";
-        String noSavedMovies="You have no saved movies\n";
-        String noSavedSeries="You have no saved series\n";
-        return getString(savedMovieList, savedSeriesList, savedMovies, savedSeries, noSavedMovies,noSavedSeries);
+        String savedMovieList = "|SAVED MOVIES|\n";
+        String savedSeriesList = "|SAVED SERIES|\n";
+        String noSavedMovies = "You have no saved movies\n";
+        String noSavedSeries = "You have no saved series\n";
+        return getString(savedMovieList, savedSeriesList, savedMovies, savedSeries, noSavedMovies, noSavedSeries);
     }
+
     public String getWatched() {
-        String watchedMovieList= "|WATCHED MOVIES|\n";
-        String watchedSeriesList= "|WATCHED SERIES|\n";
-        String noWatchedMovies="You have no watched movies\n";
-        String noWatchedSeries="You have no watched series\n";
-        return getString(watchedMovieList, watchedSeriesList, watchedMovies, watchedSeries, noWatchedMovies,noWatchedSeries);
+        String watchedMovieList = "|WATCHED MOVIES|\n";
+        String watchedSeriesList = "|WATCHED SERIES|\n";
+        String noWatchedMovies = "You have no watched movies\n";
+        String noWatchedSeries = "You have no watched series\n";
+        return getString(watchedMovieList, watchedSeriesList, watchedMovies, watchedSeries, noWatchedMovies, noWatchedSeries);
     }
 
-    private String getString(String watchedMovieList, String watchedSeriesList, String[] watchedMovies, String[] watchedSeries,String noMovies, String noSeries) {
-        int number=1;
-        if(Objects.equals(watchedMovies[0], "null")){
-            watchedMovieList+=noMovies;
-        }
-        else {
-            for(String p : watchedMovies){
-                watchedMovieList+=number+". "+p+"\n";
+    private String getString(String watchedMovieList, String watchedSeriesList, String[] watchedMovies, String[] watchedSeries, String noMovies, String noSeries) {
+        int number = 1;
+        if (Objects.equals(watchedMovies[0], "none")) {
+            watchedMovieList += noMovies;
+        } else {
+            for (String p : watchedMovies) {
+                watchedMovieList += number + ". " + p + "\n";
                 number++;
             }
         }
-        if (Objects.equals(watchedSeries[0],"null")){
-            watchedSeriesList+=noSeries;
-        }
-        else {
-            for (String p : watchedSeries){
-                watchedSeriesList+=number+". "+p+"\n";
+        if (Objects.equals(watchedSeries[0], "none")) {
+            watchedSeriesList += noSeries;
+        } else {
+            for (String p : watchedSeries) {
+                watchedSeriesList += number + ". " + p + "\n";
                 number++;
             }
         }
 
-        return watchedMovieList+watchedSeriesList;
+        return watchedMovieList + watchedSeriesList;
     }
+
     public void deleteMedia()                   //Function to delete saved media titles both movie and series
     {
         Scanner scanner = new Scanner(System.in);
@@ -205,131 +191,89 @@ public class User {
         System.out.println("2. Series");
         System.out.println("---------------------------------------------------------------");
         String userInput = scanner.nextLine();
-        if(userInput.equals("1"))                                   //Execution if user wants to delete movie
+        if (userInput.equals("1"))                                   //Execution if user wants to delete movie
         {
+            if (Objects.equals(savedMovies[0], "none")) {
+                System.out.println("There are no movies to delete");
+                mainMenu.runMainMenu();
+            }
             System.out.println("------------------------------------");         //reprint saved movies with a line above
             System.out.println("|SAVED MOVIES|");
             int i = 1;
-            for(String s : savedMovies)
-            {
+            for (String s : savedMovies) {
                 System.out.println(i + ". " + s);
                 i++;
             }
             System.out.println("------------------------------------");             //let user choose what specific movie to delete
             System.out.println("Choose what movie you want to delete");
             System.out.println("------------------------------------");
-            int userInt = scanner.nextInt() -1;
+            int userInt = scanner.nextInt() - 1;
             System.out.println("Are you sure you want to delete " + savedMovies[userInt] + " permanently from your saved media list?");
             System.out.println("1. Yes");
             System.out.println("2. No");
             int userInt2 = scanner.nextInt();
-            if(userInt2 == 1) {
-                File user = new File("SP3/Data/user.csv");
-                try {
-                    String toBePrinted = savedMovies[userInt] + " has been removed from your saved media list";             //saving movie title before it is deleted
-                    Scanner fileScanner = new Scanner(user);
-                    while (fileScanner.hasNextLine()) {             //delete movie from file
-                        String userLine = fileScanner.nextLine();
-
-                        if (userLine.contains(getUsername() + ";" + getPassword())) {
-                            FileIO fileIO = new FileIO();
-                            fileIO.removeFromFile(savedMovies[userInt]);
-                            break;
-                        }
-                    }
-                    setSavedMovies(removePart(savedMovies, userInt));               //delete movie from array, print new list
-                    System.out.println(toBePrinted);
-                    System.out.println("-------------------------------------------------------------------");
-                    System.out.println("|SAVED MOVIES|");
-                    for (int n = 0; n < savedMovies.length; n++) {
-                        System.out.println(savedMovies[n]);
-                    }
-                    System.out.println("-------------------------------------------------------------------");
-                } catch (IOException e) {
-                    mainMenu.spaces();
-                    System.out.println("File not found");
-                    System.out.println("------------------");
-                    mainMenu.runMainMenu();
-
+            if (userInt2 == 1) {
+                String toBePrinted = savedMovies[userInt] + " has been removed from your saved media list";
+                List<String> mediaList;
+                String[] noneList = {"none"};
+                if (1 == savedMovies.length) {
+                    savedMovies = noneList;
+                } else {
+                    mediaList = new ArrayList<String>(Arrays.asList(savedMovies));
+                    mediaList.remove(userInt);
+                    savedMovies = mediaList.toArray(new String[mediaList.size()]);
                 }
-
+                System.out.println(toBePrinted);
+                System.out.println(startMenu.getCurrentUser().getSaved());
+                startMenu.saveUsers();
             }
-            else
-            {
+            else {
                 mainMenu.spaces();
-                System.out.println("------------------");
                 mainMenu.runMainMenu();
             }
+
         }
-        if(userInput.equals("2"))                           //Execution if user wants to delete movie
+        if (userInput.equals("2"))                           //Execution if user wants to delete movie
         {
-            System.out.println("------------------------------------");
-            System.out.println("|SAVED SERIES");
+            if (Objects.equals(savedSeries[0], "none")) {
+                System.out.println("There are no series to delete");
+                mainMenu.runMainMenu();
+            }
+            System.out.println("------------------------------------");         //reprint saved movies with a line above
+            System.out.println("|SAVED SERIES|");
             int i = 1;
-            for(String s : savedSeries)
-            {
+            for (String s : savedSeries) {
                 System.out.println(i + ". " + s);
                 i++;
             }
-            System.out.println("------------------------------------");             //let user choose what series to delete
+            System.out.println("------------------------------------");             //let user choose what specific movie to delete
             System.out.println("Choose what series you want to delete");
             System.out.println("------------------------------------");
-            int userInt = scanner.nextInt() -1;
+            int userInt = scanner.nextInt() - 1;
             System.out.println("Are you sure you want to delete " + savedSeries[userInt] + " permanently from your saved media list?");
             System.out.println("1. Yes");
             System.out.println("2. No");
             int userInt2 = scanner.nextInt();
-            if(userInt2 == 1) {                                   //Deleting the series
-                File user = new File("SP3/Data/user.csv");
-                try {
-                    String toBePrinted = savedSeries[userInt] + " has been removed from your saved media list";  //Saving media title for later
-                    Scanner fileScanner = new Scanner(user);
-                    while (fileScanner.hasNextLine()) {                                         //deleting series from file
-                        String userLine = fileScanner.nextLine();
-                        if (userLine.contains(getUsername() + ";" + getPassword())) {
-                            FileIO fileIO = new FileIO();
-                            fileIO.removeFromFile(savedSeries[userInt]);
-                            break;
-                        }
-                    }
-                    setSavedSeries(removePart(savedSeries, userInt));               //deleting series from array and printing new list
-                    System.out.println(toBePrinted);
-                    System.out.println("-------------------------------------------------------------------");
-                    System.out.println("|SAVED SERIES|");
-                    for (int b = 0; b < savedSeries.length; b++) {
-                        System.out.println(savedSeries[b]);
-                    }
-                    System.out.println("-------------------------------------------------------------------");
-                } catch (IOException e) {
-                    System.out.println("File not found");
+            if (userInt2 == 1) {
+                String toBePrinted = savedSeries[userInt] + " has been removed from your saved media list";
+                List<String> mediaList;
+                String[] noneList = {"none"};
+                if (1 == savedSeries.length) {
+                    savedSeries = noneList;
+                } else {
+                    mediaList = new ArrayList<String>(Arrays.asList(savedSeries));
+                    mediaList.remove(userInt);
+                    savedSeries = mediaList.toArray(new String[mediaList.size()]);
                 }
-
-            }
-            else
-            {
+                System.out.println(toBePrinted);
+                System.out.println(startMenu.getCurrentUser().getSaved());
+                startMenu.saveUsers();
+            } else {
                 mainMenu.spaces();
-                System.out.println("------------------");
                 mainMenu.runMainMenu();
             }
         }
     }
-    public String[] removePart(String[] array, int index)               //function to delete a part of an array
-    {
-        String [] newString = new String[array.length - 1];
-        if (array == null || index < 0
-                || index >= array.length) {
 
-            return array;
-        }
-        for(int i = 0, k = 0; i < array.length; i++)
-        {
-            if(i == index)
-            {
-                continue;
-            }
-            newString[k++] = array[i];
-        }
-        return newString;
-    }
 
 }
