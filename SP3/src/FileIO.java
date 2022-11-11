@@ -55,31 +55,5 @@ public class FileIO {
             System.out.println(e);
         }
     }
-    public void removeFromFile(String s)                        //function to remove segment from file
-    {
-        File fileToBeModified = new File("SP3/Data/user.csv");
-        String oldContent = "";
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(fileToBeModified));           //Find and read the file
-            String line = reader.readLine();
-            while(line !=null)
-            {
-                oldContent = oldContent + line + System.lineSeparator();
-                line = reader.readLine();
-            }
-
-            String newContent = oldContent.replaceAll(s + ",", "");             //Make new file contain old file with the exception of String s
-            newContent = newContent.replaceAll(",,", ",");
-            newContent = newContent.replaceAll(s, "");
-            FileWriter writer = new FileWriter(fileToBeModified);
-            writer.write(newContent);
-            reader.close();
-            writer.close();
-        }
-        catch(IOException e)
-        {
-            System.out.println(e);
-        }
-    }
 }
 
