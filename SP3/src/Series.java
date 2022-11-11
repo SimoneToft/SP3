@@ -57,7 +57,7 @@ public class Series extends aMedia {
 
         } else if (nextChoice <= seriesSearch.size()) {
             String movieTitle = seriesSearch.get(nextChoice - 1).getMediaTitle();
-            mainMenu.mediaPlayer(movieTitle, true, false);
+            mainMenu.mediaPlayer(movieTitle, false, true);
         }
         else if (nextChoice > seriesSearch.size()||nextChoice < seriesSearch.size()){
             mainMenu.spaces();
