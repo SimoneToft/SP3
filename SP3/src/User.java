@@ -194,7 +194,10 @@ public class User {
         if (userInput.equals("1"))                                   //Execution if user wants to delete movie
         {
             if (Objects.equals(savedMovies[0], "none")) {
-                System.out.println("There are no movies to delete");
+                mainMenu.spaces();
+                System.out.println("-----------------------------");
+                System.out.println("There are no saved movies");
+                System.out.println("-----------------------------");
                 mainMenu.runMainMenu();
             }
             System.out.println("------------------------------------");         //reprint saved movies with a line above
@@ -208,12 +211,15 @@ public class User {
             System.out.println("Choose what movie you want to delete");
             System.out.println("------------------------------------");
             int userInt = scanner.nextInt() - 1;
+            System.out.println("--------------------------------------------------------------------------------------------------");
             System.out.println("Are you sure you want to delete " + savedMovies[userInt] + " permanently from your saved media list?");
             System.out.println("1. Yes");
             System.out.println("2. No");
+            System.out.println("-----------------------");
             int userInt2 = scanner.nextInt();
             if (userInt2 == 1) {
                 String toBePrinted = savedMovies[userInt] + " has been removed from your saved media list";
+                System.out.println("-------------------------------------------------");
                 List<String> mediaList;
                 String[] noneList = {"none"};
                 if (1 == savedMovies.length) {
@@ -224,19 +230,23 @@ public class User {
                     savedMovies = mediaList.toArray(new String[mediaList.size()]);
                 }
                 System.out.println(toBePrinted);
-                System.out.println(startMenu.getCurrentUser().getSaved());
                 startMenu.saveUsers();
             }
             else {
                 mainMenu.spaces();
+                System.out.println("------------------");
                 mainMenu.runMainMenu();
             }
 
         }
+
         if (userInput.equals("2"))                           //Execution if user wants to delete movie
         {
             if (Objects.equals(savedSeries[0], "none")) {
-                System.out.println("There are no series to delete");
+                mainMenu.spaces();
+                System.out.println("-------------------------");
+                System.out.println("There are no saved series");
+                System.out.println("-------------------------");
                 mainMenu.runMainMenu();
             }
             System.out.println("------------------------------------");         //reprint saved movies with a line above
@@ -250,12 +260,15 @@ public class User {
             System.out.println("Choose what series you want to delete");
             System.out.println("------------------------------------");
             int userInt = scanner.nextInt() - 1;
+            System.out.println("--------------------------------------------------------------------------------------------------");
             System.out.println("Are you sure you want to delete " + savedSeries[userInt] + " permanently from your saved media list?");
             System.out.println("1. Yes");
             System.out.println("2. No");
+            System.out.println("-----------------------");
             int userInt2 = scanner.nextInt();
             if (userInt2 == 1) {
                 String toBePrinted = savedSeries[userInt] + " has been removed from your saved media list";
+                System.out.println("-------------------------------------------------");
                 List<String> mediaList;
                 String[] noneList = {"none"};
                 if (1 == savedSeries.length) {
@@ -266,12 +279,19 @@ public class User {
                     savedSeries = mediaList.toArray(new String[mediaList.size()]);
                 }
                 System.out.println(toBePrinted);
-                System.out.println(startMenu.getCurrentUser().getSaved());
                 startMenu.saveUsers();
             } else {
                 mainMenu.spaces();
+                System.out.println("------------------");
                 mainMenu.runMainMenu();
             }
+        }
+        else {
+            mainMenu.spaces();
+            System.out.println("-------------------------");
+            System.out.println("Please type '1-2' instead");
+            System.out.println("-------------------------");
+            mainMenu.runMainMenu();
         }
     }
 

@@ -4,9 +4,8 @@
     <list default="true" id="493de6d9-02b9-48ce-9464-49d97e612729" name="Changes" comment="input error fixes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SP3/Data/user.csv" beforeDir="false" afterPath="$PROJECT_DIR$/SP3/Data/user.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SP3/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/SP3/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SP3/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/SP3/src/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SP3/src/aMedia.java" beforeDir="false" afterPath="$PROJECT_DIR$/SP3/src/aMedia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SP3/src/mainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/SP3/src/mainMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

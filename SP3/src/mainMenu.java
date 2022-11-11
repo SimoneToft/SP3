@@ -96,7 +96,7 @@ public class mainMenu {
                 System.out.println("---------------------------------------------------------------------------------");
                 Scanner newkeyboard = new Scanner(System.in);
                 int nextkey = newkeyboard.nextInt();
-                if (nextkey == 0 ||nextkey  != 1) {
+                if (nextkey == 0 ) {
                     mainMenu.spaces();
                     System.out.println("------------------");
                     runMainMenu();
@@ -106,6 +106,11 @@ public class mainMenu {
                     startMenu.getCurrentUser().deleteMedia();
                     runMainMenu();
                 }
+                mainMenu.spaces();
+                System.out.println("-------------------------------------------");  //wrongful input
+                System.out.println("Please input a corresponding number instead");
+                System.out.println("-------------------------------------------");
+                runMainMenu();
 
             } else if (intInputMain > 6 || intInputMain <= 0) {                 //number-typo
                 mainMenu.spaces();
@@ -195,13 +200,11 @@ public class mainMenu {
         Scanner movieorseries = new Scanner(System.in);
         String inputmovieorseries = movieorseries.nextLine();
         if (inputmovieorseries.equals("1")) {
-            Movie movieTemp = new Movie(null, null, null, null);
-            movieTemp.movieCategorySearch();
+            Movie.movieCategorySearch();
         }
         if (inputmovieorseries.equals("2"))
         {
-            Series seriesTemp = new Series(null, null, null, null, null);
-            seriesTemp.seriesCategorySearch();
+            Series.seriesCategorySearch();
         }
         else
         {
