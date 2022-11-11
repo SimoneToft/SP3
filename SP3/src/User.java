@@ -218,8 +218,9 @@ public class User {
             System.out.println("-----------------------");
             int userInt2 = scanner.nextInt();
             if (userInt2 == 1) {
+                mainMenu.spaces();
                 String toBePrinted = savedMovies[userInt] + " has been removed from your saved media list";
-                System.out.println("-------------------------------------------------");
+
                 List<String> mediaList;
                 String[] noneList = {"none"};
                 if (1 == savedMovies.length) {
@@ -230,6 +231,7 @@ public class User {
                     savedMovies = mediaList.toArray(new String[mediaList.size()]);
                 }
                 System.out.println(toBePrinted);
+                System.out.println("-----------------------------------------------------");
                 startMenu.saveUsers();
             }
             else {
@@ -238,6 +240,13 @@ public class User {
                 mainMenu.runMainMenu();
             }
 
+        }
+        else {
+            mainMenu.spaces();
+            System.out.println("-------------------------");
+            System.out.println("Please type '1-2' instead");
+            System.out.println("-------------------------");
+            mainMenu.runMainMenu();
         }
 
         if (userInput.equals("2"))                           //Execution if user wants to delete movie
@@ -267,6 +276,7 @@ public class User {
             System.out.println("-----------------------");
             int userInt2 = scanner.nextInt();
             if (userInt2 == 1) {
+                mainMenu.spaces();
                 String toBePrinted = savedSeries[userInt] + " has been removed from your saved media list";
                 System.out.println("-------------------------------------------------");
                 List<String> mediaList;
@@ -279,6 +289,7 @@ public class User {
                     savedSeries = mediaList.toArray(new String[mediaList.size()]);
                 }
                 System.out.println(toBePrinted);
+                System.out.println("-----------------------------------------------------");
                 startMenu.saveUsers();
             } else {
                 mainMenu.spaces();
@@ -286,13 +297,7 @@ public class User {
                 mainMenu.runMainMenu();
             }
         }
-        else {
-            mainMenu.spaces();
-            System.out.println("-------------------------");
-            System.out.println("Please type '1-2' instead");
-            System.out.println("-------------------------");
-            mainMenu.runMainMenu();
-        }
+
     }
 
 
