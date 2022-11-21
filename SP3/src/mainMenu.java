@@ -3,15 +3,18 @@ public class mainMenu {
     public static int mediaAmount;
     public static boolean seriesDisplayed=false;
     public static boolean moviesDisplayed=false;
+    public static boolean SQLEnabled = true;
 
     public static void mediaCreate(){
         createMedia.createAllMedia();
     }
     public static void runMainMenu() {
+         seriesDisplayed=false;
+         moviesDisplayed=false;
         Scanner keyboard = new Scanner(System.in);
         System.out.println("M A I N   M E N U");
         System.out.println("------------------");
-        System.out.println("1. View all movies\n2. View all series\n3. Search\n4. Categories\n5. Watched\n6. Saved");
+        System.out.println("1. View all movies\n2. View all series\n3. Search\n4. Categories\n5. Watched\n6. Saved\n7. Settings");
         System.out.println("------------------");
         int intInputMain;
 
@@ -112,7 +115,44 @@ public class mainMenu {
                 System.out.println("-------------------------------------------");
                 runMainMenu();
 
-            } else if (intInputMain > 6 || intInputMain <= 0) {                 //number-typo
+            } else if (intInputMain == 7) {
+                String Enabled = "Enable";
+                if (SQLEnabled){
+                    Enabled = "Disable";
+                }
+
+                Scanner keychoice = new Scanner(System.in);
+                System.out.println("--------SETTINGS---------");
+                System.out.println("1. " + Enabled + " SQL\n2. Logout" );
+                System.out.println("-------------------------");
+                int keythatisnext = keychoice.nextInt();
+                if (keythatisnext == 1) {
+                    if (SQLEnabled) {
+                        SQLEnabled = false;
+                        spaces();
+                        System.out.println("-------------------");
+                        System.out.println("SQL is now disabled");
+                        System.out.println("-------------------");
+                        runMainMenu();
+                    } else if (!SQLEnabled) {
+                        SQLEnabled = true;
+                        spaces();
+                        System.out.println("------------------");
+                        System.out.println("SQL is now enabled");
+                        System.out.println("------------------");
+                        runMainMenu();
+                    }
+
+                    else if (keythatisnext == 2) {
+                        spaces();
+                        Main.loginScreen();
+                    }
+                }
+
+            }
+
+
+            else if (intInputMain > 7 || intInputMain <= 0) {                 //number-typo
                 mainMenu.spaces();
                 System.out.println("-------------------------");
                 System.out.println("Please type '1-6' instead");
@@ -122,7 +162,7 @@ public class mainMenu {
             }
         } catch (Exception e) {
             mainMenu.spaces();
-            System.out.println("-------------------------------------------");  //wrongful input
+            System.out.println("-------------------x-----------------------");  //wrongful input
             System.out.println("Please input a corresponding number instead");
             System.out.println("-------------------------------------------");
             runMainMenu();
@@ -180,8 +220,15 @@ public class mainMenu {
         }
         else if(mediaChoice==2){
             mainMenu.spaces();
-            startMenu.getCurrentUser().saveMedia(moviesDisplayed,seriesDisplayed,mediaTitle);
-            runMainMenu();
+                startMenu.getCurrentUser().saveMedia(moviesDisplayed, seriesDisplayed, mediaTitle);
+                if (moviesDisplayed){
+                    SQL.addSavedMovie(mediaTitle);
+                    runMainMenu();
+                }
+            else if (seriesDisplayed) {
+                SQL.addSavedSeries(mediaTitle);
+                runMainMenu();
+                }
         }
     }
     public static void spaces (){

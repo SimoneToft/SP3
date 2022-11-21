@@ -29,17 +29,22 @@ public class User {
             for (String saved : savedMovies) {
                 if (saved.contains(str)) {
                     alreadySaved = true;
+                    mainMenu.spaces();
                     System.out.println(str + " is already saved");
                     System.out.println("-------------------------------");
-                    break;
+                    mainMenu.runMainMenu();
+
                 }
             }
             if (!alreadySaved) {
                 saveMovieList.add(str);
                 savedMovies = saveMovieList.toArray(savedMovies);
+                startMenu.saveUsers();
+                mainMenu.spaces();
                 System.out.println(str + " is now saved.");
                 System.out.println("-----------------------------------");
-                startMenu.saveUsers();
+
+
             }
 
         }
@@ -54,6 +59,7 @@ public class User {
             for (String saved : savedSeries) {
                 if (saved.equals(str)) {
                     alreadySaved = true;
+                    mainMenu.spaces();
                     System.out.println(str + " is already saved");
                     System.out.println("--------------------------");
                     break;
@@ -62,6 +68,7 @@ public class User {
             if (!alreadySaved) {
                 mediaList.add(str);
                 savedSeries = mediaList.toArray(savedSeries);
+                mainMenu.spaces();
                 System.out.println(str + " is now saved.");
                 System.out.println("------------------------------");
                 startMenu.saveUsers();

@@ -9,6 +9,7 @@ public class Movie extends aMedia {
         super(mediaTitle,mediaReleaseYear,mediaCategory,mediaRating);
     }
 
+
        public static void titleSearch(String search) {
             List<Movie> movieSearch = new ArrayList<>();
             int number = 1;

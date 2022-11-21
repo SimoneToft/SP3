@@ -2,10 +2,13 @@ import java.util.Scanner;
 
 public class Main {
     private static startMenu startmenu = new startMenu();
-    public static void main(String[] args) {
+
+        public static void main(String[] args) {
+        SQL.establishConnection();
         loginScreen();
     }
     public static void loginScreen(){
+
         System.out.println("--------------------------------");
         System.out.println("Welcome to our streaming service! \n 1. Log in \n 2. Sign up");
         System.out.println("--------------------------------");
